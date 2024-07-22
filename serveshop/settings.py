@@ -33,7 +33,8 @@ DEBUG = True
 ALLOWED_HOSTS = ['http://127.0.0.1:8000/','127.0.0.1:8000','localhost',
                 '8000-wlia-code-serveshop-qkykmzngrj.us1.codeanyapp.com',
                 '8000-wliacode-serveshop-1zv5a2xpu0c.ws.codeinstitute-ide.net',
-                'https://gn-shop-e18f4dd2529c.herokuapp.com/',]
+                'https://gn-shop-e18f4dd2529c.herokuapp.com',
+                'gn-shop-e18f4dd2529c.herokuapp.com',]
 
 CSRF_TRUSTED_ORIGINS = [
 
