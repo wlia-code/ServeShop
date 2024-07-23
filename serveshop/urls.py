@@ -29,5 +29,5 @@ urlpatterns = [
     path('profiles/', include('profiles.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-
-handler404 = 'serveshop.views.handler404'
+""" Error Handler 404 - Page Not Found """
+handler404 = 'serveshop.views.handler404'  # noqa: F811
