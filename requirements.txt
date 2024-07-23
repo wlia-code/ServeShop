@@ -4,7 +4,7 @@ boto3==1.34.146
 botocore==1.34.146
 chardet==3.0.4
 dj-database-url==2.1.0
-Django==4.0.1
+Django==3.2.25
 django-allauth==0.63.6
 django-countries==7.2.1
 django-crispy-forms==1.14.0
