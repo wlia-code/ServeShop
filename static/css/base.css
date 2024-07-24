@@ -436,3 +436,11 @@ ul, ol {
         padding: .25rem .5rem !important;
     }
 }
+
+@media (max-width: 767px) {
+    .footer {
+        padding: 10px;
+        font-size: 12px;
+        text-align: center;
+    }
+}
