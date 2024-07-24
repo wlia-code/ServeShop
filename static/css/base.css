@@ -177,33 +177,6 @@ input[name='q']::placeholder {
     overflow-y: auto;
 }
 
-
-/* General Card Styling */
-/* .card {
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
-  margin-bottom: 20px;
-}
-
-.card-body {
-  padding: 30px;
-  text-align: center;
-}
-
-.card-text {
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-.card-title {
-  font-weight: bold;
-  margin-top: 15px;
-}
-.context-dark, .bg-gray-dark, .bg-primary {
-    color: rgba(255, 255, 255, 0.8);
-} */
-
 .card {
     transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -364,7 +337,7 @@ ul, ol {
 }
 
 .allauth-form-inner-content a {
-	color: #17a2b8; /* text-info */
+	color: #17a2b8;
 }
 
 /* Product Form */
