@@ -72,17 +72,17 @@
                         </a>
                         <div class="dropdown-menu border-0" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
-                                {% if request.user.is_superuser %}
-                                    <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
-                                {% endif %}
-                                <a href="{% url 'wishlist' %}" class="dropdown-item">Wishlist</a>
-                                <a href="{% url 'submit_testimonial' %}" class="dropdown-item">Submit Testimonial</a>
-                                <a href="{% url 'submit_contact_request' %}" class="dropdown-item">Contact Us</a>
-                                <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                            {% if request.user.is_superuser %}
+                            <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
+                            {% endif %}
+                            <a href="{% url 'wishlist' %}" class="dropdown-item">Wishlist</a>
+                            <a href="{% url 'submit_testimonial' %}" class="dropdown-item">Submit Testimonial</a>
+                            <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+                            <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                             {% else %}
-                                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                            <a href="{% url 'submit_contact_request' %}" class="dropdown-item">Contact Us</a>
+                            <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                            <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
                             {% endif %}
                         </div>
                     </li>
@@ -114,26 +114,29 @@
                 {% include 'includes/main-nav.html' %}
             </nav>
         </div>
+        {% block delivery-banner %}
         <div id="delivery-banner" class="row text-center">
-            <div class="col bg-black text-white">
+            <div class="col bg-warning text-dark">
                 <h4 class="logo-font my-1">Free delivery on orders over ${{ free_delivery_threshold }}!</h4>
             </div>
         </div>
+        {% endblock %}
+
     </header>
     {% if messages %}
     <div class="message-container">
         {% for message in messages %}
-            {% with message.level as level %}
-                {% if level == 40 %}
-                    {% include 'includes/toasts/toast_error.html' %}
-                {% elif level == 30 %}
-                    {% include 'includes/toasts/toast_warning.html' %}
-                {% elif level == 25 %}
-                    {% include 'includes/toasts/toast_success.html' %}
-                {% else %}
-                    {% include 'includes/toasts/toast_info.html' %}
-                {% endif %}
-            {% endwith %}
+        {% with message.level as level %}
+        {% if level == 40 %}
+        {% include 'includes/toasts/toast_error.html' %}
+        {% elif level == 30 %}
+        {% include 'includes/toasts/toast_warning.html' %}
+        {% elif level == 25 %}
+        {% include 'includes/toasts/toast_success.html' %}
+        {% else %}
+        {% include 'includes/toasts/toast_info.html' %}
+        {% endif %}
+        {% endwith %}
         {% endfor %}
     </div>
     {% endif %}
@@ -144,20 +147,19 @@
     {% block content %}{% endblock %}
     <!-- Footer block -->
     {% block footer %}
-<footer class="footer costum-footer bg-dark text-white mt-5 py-4">
-    <div class="container">
-            <div class="col-md-6">
-                <p>© 2024 GN Shop. All rights reserved.</p>
-            </div>
-        <div class="col-md-6 text-md-right">
-            <a href="#" class="text-white">Privacy Policy</a>
-            <span>|</span>
-            <a href="#" class="text-white">Terms of Use</a>
-            </div>
+
+    <div class="text-center text-dark p-3 bg-warning font-weight-bold costum-footer">
+        <div class="container">
+            <nav class="nav nav-pills flex-column flex-sm-row justify-content-center">
+                <a class="flex-sm-fill text-sm-center nav-link" href="#">Home</a>
+                <a class="flex-sm-fill text-sm-center nav-link" href="#">Products</a>
+                <a class="flex-sm-fill text-sm-center nav-link" href="#">Contact</a>
+            </nav>
+            <p>Copyright © 2024 GN-SHOP All Rights Reserved.</p>
         </div>
     </div>
-</footer>
-{% endblock %}
+
+    {% endblock %}
     {% block postloadjs %}
     <script type="text/javascript">
         $('.toast').toast('show');

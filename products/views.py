@@ -183,7 +183,7 @@ def submit_testimonial(request):
     return render(request, "products/submit_testimonial.html", {"form": form})
 
 
-@login_required
+
 def submit_contact_request(request):
     if request.method == "POST":
         form = ContactForm(request.POST)

@@ -1,4 +1,6 @@
 from django.contrib import admin
+from django.core.mail import send_mail
+from django.conf import settings
 from .models import Product, Category, ProductReview, Wishlist, Testimonial, ContactRequest
 
 # Register your models here.
