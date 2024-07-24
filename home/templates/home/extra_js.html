@@ -1,16 +1,34 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        document.querySelectorAll('.show-more-btn').forEach(function (button) {
-            button.addEventListener('click', function () {
-                const cardText = this.previousElementSibling;
-                if (cardText.classList.contains('expanded')) {
-                    cardText.classList.remove('expanded');
-                    this.textContent = 'Show More';
-                } else {
-                    cardText.classList.add('expanded');
-                    this.textContent = 'Show Less';
-                }
-            });
+    function fetchProducts() {
+        $.ajax({
+            url: '/ajax/latest-products/',
+            type: 'GET',
+            success: function (response) {
+                const container = $('#product-container');
+                container.empty();
+                response.products.forEach(function (product) {
+                    container.append(`
+                    <div class="col-md-4 col-sm-6 mb-4 d-flex justify-content-center">
+                        <div class="card" style="width: 18rem;">
+                            <img class="card-img-top" src="${product.image}" alt="${product.name}" style="max-height: 200px; object-fit: cover;">
+                            <div class="card-body" style="padding: 10px;">
+                                <h5 class="card-title">${product.name}</h5>
+                                <p class="card-text" style="margin-bottom: 10px;"><strong>$${product.price}</strong></p>
+                                <a href="/products/${product.id}" class="btn btn-warning">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                `);
+                });
+            },
+            error: function (error) {
+                console.log('Error:', error);
+            }
         });
-    });
+    }
+
+    
+    setInterval(fetchProducts, 30000); // 30000 ms = 30 seconds
+    fetchProducts();  // Also fetch immediately on page load
 </script>
