@@ -1,13 +1,16 @@
 html {
     height: 100%;
+    margin: 0;
 }
 
 body {
     background: url('/media/homepage_background_cropped.jpg') no-repeat center center fixed;
     background-size: cover;
-    height: calc(100vh - 164px);
     color: #555;
     font-family: 'Lato';
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* from Bulma */
@@ -176,7 +179,7 @@ input[name='q']::placeholder {
 
 
 /* General Card Styling */
-.card {
+/* .card {
   border: none;
   border-radius: 0;
   box-shadow: none;
@@ -188,7 +191,6 @@ input[name='q']::placeholder {
   text-align: center;
 }
 
-/* Text Styling */
 .card-text {
   font-size: 14px;
   line-height: 1.6;
@@ -200,6 +202,60 @@ input[name='q']::placeholder {
 }
 .context-dark, .bg-gray-dark, .bg-primary {
     color: rgba(255, 255, 255, 0.8);
+} */
+
+.card {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    border-radius: 50%;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-text {
+    font-size: 0.95rem;
+}
+
+.btn-outline-primary {
+    border-color: #007bff;
+    color: #007bff;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-outline-primary:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.card-h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    color: #333;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    margin: 20px 0;
+}
+
+footer.card-footer {
+    font-size: 0.8rem;
+}
+
+footer {
+  display: block;
+  overflow: hidden;
 }
 
 .footer-classic a, .footer-classic a:focus, .footer-classic a:active {
@@ -366,7 +422,9 @@ ul, ol {
     }
 
     body {
-        height: calc(100vh - 116px);
+            display: flex;
+    flex-direction: column;
+    min-height: 100vh;;
     }
 
     .display-4.logo-font.text-black {

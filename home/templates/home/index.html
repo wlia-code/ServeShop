@@ -1,80 +1,70 @@
 {% extends "base.html" %}
 {% load static %}
 
+<!-- Header section -->
 {% block page_header %}
-    <div class="container header-container">
+    <header class="container header-container">
         <div class="row">
             <div class="col"></div>
         </div>
-    </div>
+    </header>
 {% endblock %}
 
+<!-- Main content -->
 {% block content %}
-    <div class="container">
-        <div class="row h-100">
-            <div class="col-7 col-md-6 my-auto">
-                <h1 class="display-4 logo-font text-black">
-                    The new collections are here
-                </h1>
-                <div class="my-5">
-                    <a href="{% url 'products' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Shop Now</a>
-                </div>
+<main class="container">
+    <section class="row h-100">
+        <article class="col-7 col-md-6 my-auto">
+            <h1 class="display-4 logo-font text-black">
+                The new collections are here
+            </h1>
+            <div class="my-5">
+                <a href="{% url 'products' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Shop Now</a>
+            </div>
+        </article>
+    </section>
+<section class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col text-center">
+            <h2 class="card-h2 text-dark py-3 mb-4">Customer Testimonials</h2>
+            <div class="testimonials-section mt-5">
+                {% if testimonials %}
+                    <div class="row">
+                        {% for testimonial in testimonials %}
+                            <div class="col-md-4 mb-4">
+                                <div class="card h-100 shadow-sm border-0">
+                                    {% if testimonial.image %}
+                                        <img src="{{ testimonial.image.url }}" class="card-img-top rounded-circle mt-3 mx-auto d-block" style="width: 80px; height: 80px;" alt="{{ testimonial.user.username }}">
+                                    {% endif %}
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title font-weight-bold">{{ testimonial.user.username }}</h5>
+                                        <p class="card-text">{{ testimonial.text|truncatechars:100 }}</p>
+                                        {% if testimonial.text|length > 100 %}
+                                            <button class="btn btn-outline-primary btn-sm mt-2">Read More</button>
+                                        {% endif %}
+                                    </div>
+                                    {% if testimonial.review %}
+                                        <footer class="card-footer bg-light border-0 text-muted">
+                                            <small>{{ testimonial.review }}</small>
+                                        </footer>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <p class="mt-4">No testimonials available at the moment. Be the first to leave a review!</p>
+                {% endif %}
             </div>
         </div>
     </div>
-<div class="container">
-  <div class="row">
-    <div class="col text-center">
-      <h2 class="logo-font bg-dark text-white">Customer Testimonials</h2>
-      <div class="testimonials-section mt-5">
-        {% if testimonials %}
-          <div class="card-columns">
-            {% for testimonial in testimonials %}
-              <div class="card h-100 bg-dark text-white"> 
-                {% if testimonial.image %}
-                  <img src="{{ testimonial.image.url }}" class="card-img-top" alt="{{ testimonial.user.username }}">
-                {% endif %}
-                <div class="card-body">
-                  <h5 class="card-title">{{ testimonial.user.username }}</h5>
-                  <p class="card-text">{{ testimonial.text|truncatechars:100 }}</p>
-                  {% if testimonial.text|length > 100 %}
-                    <button class="btn btn-link p-0 text-white show-more-btn">Read More</button>
-                  {% endif %}
-                </div>
-                {% if testimonial.review %}  
-                  <div class="card-footer bg-secondary">
-                    <small class="text-white">{{ testimonial.review }}</small> 
-                  </div>
-                {% endif %}
-              </div>
-            {% endfor %}
-          </div>
-        {% else %}
-          <p class="mt-4">No testimonials available at the moment. Be the first to leave a review!</p>
-        {% endif %}
-      </div>
-    </div>
-  </div>
-</div>
+</section>
 
+
+</main>
 {% endblock %}
 
 {% block extra_js %}
-    {{ block.super }}
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            document.querySelectorAll('.show-more-btn').forEach(function (button) {
-                button.addEventListener('click', function () {
-                    const cardText = this.previousElementSibling;
-                    if (cardText.classList.contains('expanded')) {
-                        cardText.classList.remove('expanded');
-                        this.textContent = 'Show More';
-                    } else {
-                        cardText.classList.add('expanded');
-                        this.textContent = 'Show Less';
-                    }
-                });
-            });
-        });
-    </script>
+    {% include 'home/extra_js.html' %}
 {% endblock %}
+

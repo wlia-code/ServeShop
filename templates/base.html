@@ -138,10 +138,26 @@
     </div>
     {% endif %}
 
-    {% block page_header %}{% endblock %}
+    {% block page_header %}
+    {% endblock %}
 
     {% block content %}{% endblock %}
-
+    <!-- Footer block -->
+    {% block footer %}
+<footer class="footer costum-footer bg-dark text-white mt-5 py-4">
+    <div class="container">
+            <div class="col-md-6">
+                <p>© 2024 GN Shop. All rights reserved.</p>
+            </div>
+        <div class="col-md-6 text-md-right">
+            <a href="#" class="text-white">Privacy Policy</a>
+            <span>|</span>
+            <a href="#" class="text-white">Terms of Use</a>
+            </div>
+        </div>
+    </div>
+</footer>
+{% endblock %}
     {% block postloadjs %}
     <script type="text/javascript">
         $('.toast').toast('show');

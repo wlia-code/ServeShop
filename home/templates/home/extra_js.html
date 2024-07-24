@@ -1,0 +1,16 @@
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.show-more-btn').forEach(function (button) {
+            button.addEventListener('click', function () {
+                const cardText = this.previousElementSibling;
+                if (cardText.classList.contains('expanded')) {
+                    cardText.classList.remove('expanded');
+                    this.textContent = 'Show More';
+                } else {
+                    cardText.classList.add('expanded');
+                    this.textContent = 'Show Less';
+                }
+            });
+        });
+    });
+</script>
