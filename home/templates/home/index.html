@@ -10,18 +10,71 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container h-100">
+    <div class="container">
         <div class="row h-100">
             <div class="col-7 col-md-6 my-auto">
                 <h1 class="display-4 logo-font text-black">
                     The new collections are here
                 </h1>
                 <div class="my-5">
-                    <h4>
-                        <a href="{% url 'products' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Shop Now</a>
-                    </h4>
+                    <a href="{% url 'products' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Shop Now</a>
                 </div>
             </div>
         </div>
     </div>
+<div class="container">
+  <div class="row">
+    <div class="col text-center">
+      <h2 class="logo-font bg-dark text-white">Customer Testimonials</h2>
+      <div class="testimonials-section mt-5">
+        {% if testimonials %}
+          <div class="card-columns">
+            {% for testimonial in testimonials %}
+              <div class="card h-100 bg-dark text-white"> 
+                {% if testimonial.image %}
+                  <img src="{{ testimonial.image.url }}" class="card-img-top" alt="{{ testimonial.user.username }}">
+                {% endif %}
+                <div class="card-body">
+                  <h5 class="card-title">{{ testimonial.user.username }}</h5>
+                  <p class="card-text">{{ testimonial.text|truncatechars:100 }}</p>
+                  {% if testimonial.text|length > 100 %}
+                    <button class="btn btn-link p-0 text-white show-more-btn">Read More</button>
+                  {% endif %}
+                </div>
+                {% if testimonial.review %}  
+                  <div class="card-footer bg-secondary">
+                    <small class="text-white">{{ testimonial.review }}</small> 
+                  </div>
+                {% endif %}
+              </div>
+            {% endfor %}
+          </div>
+        {% else %}
+          <p class="mt-4">No testimonials available at the moment. Be the first to leave a review!</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+    {{ block.super }}
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.show-more-btn').forEach(function (button) {
+                button.addEventListener('click', function () {
+                    const cardText = this.previousElementSibling;
+                    if (cardText.classList.contains('expanded')) {
+                        cardText.classList.remove('expanded');
+                        this.textContent = 'Show More';
+                    } else {
+                        cardText.classList.add('expanded');
+                        this.textContent = 'Show Less';
+                    }
+                });
+            });
+        });
+    </script>
 {% endblock %}

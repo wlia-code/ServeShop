@@ -2406,5 +2406,36 @@
          "image_url":"http://s7d9.scene7.com/is/image/JCPenney/DP0429201617074742M.tif?hei=380&amp;wid=380&op_usm=.4,.8,0,0&resmode=sharp2&op_usm=1.5,.8,0,0&resmode=sharp",
          "image":"DP0429201617074742M.jpg"
       }
-   }
+   },
+   {
+        "model": "products.Product",
+        "pk": 175,
+        "fields": {
+            "category": 10,
+            "sku": "ELEC1234",
+            "name": "Smartphone",
+            "description": "A high-end smartphone with all the latest features.",
+            "has_sizes": false,
+            "price": "699.99",
+            "rating": "4.5",
+            "image_url": "http://example.com/smartphone.jpg",
+            "image": null
+        }
+    },
+    {
+        "model": "products.Product",
+        "pk": 176,
+        "fields": {
+            "category": 11,
+            "sku": "BOOK1234",
+            "name": "Python Programming",
+            "description": "A comprehensive guide to Python programming.",
+            "has_sizes": false,
+            "price": "29.99",
+            "rating": "4.8",
+            "image_url": "http://example.com/python_book.jpg",
+            "image": null
+        }
+    }
+
 ]

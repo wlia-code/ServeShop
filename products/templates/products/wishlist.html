@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'products/css/wishlist.css' %}">
+{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <hr>
+                <h2 class="logo-font mb-4">Your Wishlist</h2>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <ul class="list-unstyled">
+                    {% for product in products %}
+                    <li class="media mb-4">
+                        <img class="mr-3" src="{{ product.image.url }}" alt="{{ product.name }}" width="100">
+                        <div class="media-body">
+                            <h5 class="mt-0 mb-1">{{ product.name }}</h5>
+                            <p class="mb-1">{{ product.description }}</p>
+                            <p class="mb-1">${{ product.price }}</p>
+                            <a href="{% url 'product_detail' product.id %}" class="btn btn-black rounded-0 text-uppercase">View Product</a>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <!-- Additional JavaScript if needed -->
+{% endblock %}

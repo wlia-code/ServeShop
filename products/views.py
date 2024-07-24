@@ -4,8 +4,8 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
 
-from .models import Product, Category
-from .forms import ProductForm
+from .models import Product, Category, ProductReview, Wishlist, Testimonial, ContactRequest
+from .forms import ProductForm, ContactForm, TestimonialForm
 
 # Create your views here.
 
@@ -137,3 +137,71 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
+
+
+@login_required
+def add_review(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    if request.method == 'POST':
+        rating = request.POST['rating']
+        comment = request.POST['comment']
+        review = ProductReview.objects.create(product=product, user=request.user, rating=rating, comment=comment)
+        review.save()
+        return redirect('product_detail', product_id=product.id)
+    return render(request, 'products/add_review.html', {'product': product})
+
+
+@login_required
+def add_to_wishlist(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    wishlist, created = Wishlist.objects.get_or_create(user=request.user)
+    wishlist.products.add(product)
+    return redirect('wishlist')
+
+
+@login_required
+def view_wishlist(request):
+    wishlist, created = Wishlist.objects.get_or_create(user=request.user)
+    products = wishlist.products.all()
+    return render(request, 'products/wishlist.html', {'wishlist': wishlist, 'products': products})
+
+
+@login_required
+def submit_testimonial(request):
+    if request.method == "POST":
+        form = TestimonialForm(request.POST, request.FILES)
+        if form.is_valid():
+            testimonial = form.save(commit=False)
+            testimonial.user = request.user
+            testimonial.save()
+            messages.success(request, "Thank you for submitting your testimonial. It will be reviewed by an admin soon.")
+            return redirect('home')
+        else:
+            messages.error(request, "Failed to submit testimonial. Please correct the errors below.")
+    else:
+        form = TestimonialForm()
+    return render(request, "products/submit_testimonial.html", {"form": form})
+
+
+@login_required
+def submit_contact_request(request):
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            try:
+                form.send_email()
+                request.session["user_name"] = form.cleaned_data["name"]
+                return redirect("success_url")
+            except Exception as e:
+                messages.error(request, f"Failed to send email: {str(e)}")
+                return render(request, "products/submit_contact_request.html", {"form": form})
+        else:
+            return render(request, "products/submit_contact_request.html", {"form": form})
+    else:
+        form = ContactForm()
+        return render(request, "products/submit_contact_request.html", {"form": form})
+
+
+def success(request):
+    return render(request, "products/success.html")
+

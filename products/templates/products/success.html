@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'products/css/success.css' %}">
+{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <hr>
+                <h2 class="logo-font mb-4">Success</h2>
+                <hr>
+                <p>Your message has been sent successfully!</p>
+            </div>
+        </div>
+        
+                <div class="my-5">
+                    <a href="{% url 'home' %}" class="btn btn-lg btn-primary rounded-0 text-uppercase py-3 mr-2">
+                        Return to Homepage
+                    </a>
+                    <a href="{% url 'products' %}" class="btn btn-lg btn-secondary rounded-0 text-uppercase py-3">
+                        Shop Now
+                    </a>
+                </div>
+    </div>
+{% endblock %}

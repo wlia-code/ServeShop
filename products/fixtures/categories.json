@@ -70,5 +70,21 @@
             "name": "shirts",
             "friendly_name": "Shirts"
         }
+    },
+    {
+        "model": "products.Category",
+        "pk": 10,
+        "fields": {
+            "name": "Electronics",
+            "friendly_name": "Electronics"
+        }
+    },
+    {
+        "model": "products.Category",
+        "pk": 11,
+        "fields": {
+            "name": "Books",
+            "friendly_name": "Books"
+        }
     }
 ]
