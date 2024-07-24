@@ -4,7 +4,7 @@ html {
 }
 
 body {
-    background-color: #00486c;
+    background-color: #6d787c;
     color: #555;
     font-family: 'Lato';
     display: flex;
@@ -515,4 +515,11 @@ ul, ol {
 
 .btn-link {
 	font-weight: bold;
+}
+
+.shadow-custom {
+    width: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 0 auto;
+    padding: 2%;
 }

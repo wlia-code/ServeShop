@@ -12,8 +12,10 @@
 
 <!-- Main content -->
 {% block content %}
+<div class="text-center text-warning pt-4 shadow-custom">
+    <span class="h2 font-weight-bold">Our Featured Products</span>
+</div>
 
-<h2 class="card-title">Our Products</h2>
 <div class="container">
     <div class="row">
         {% for product in products %}
@@ -24,14 +26,17 @@
                 <div class="card-body" style="padding: 10px;">
                     <h5 class="card-title">{{ product.name }}</h5>
                     <p class="card-text" style="margin-bottom: 10px;"><strong>${{ product.price }}</strong></p>
-                    <a href="{% url 'product_detail' product.id %}" class="btn btn-primary">View Details</a>
+                    <a href="{% url 'product_detail' product.id %}" class="btn btn-warning">View Details</a>
                 </div>
             </div>
         </div>
         {% endfor %}
     </div>
 </div>
-
+<div class="text-center text-white pt-4 pb-3">
+    <button type="button" class="btn btn btn-warning">More Products Here</button>
+    <hr class="border border-warning my-2" style="opacity: 0.5;">
+</div>
 
 <!-- Testimonial Section -->
 <!-- <section id="customer-testimonials" class="testimonials-section mt-5">
