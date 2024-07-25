@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h2 class="logo-font mb-4">My Orders</h2>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        {% if orders %}
+            {% for order in orders %}
+                <div class="col-md-12 mb-4">
+                    <div class="card order-card border-0">
+                        <div class="card-body pb-0">
+                            <h5 class="card-title">Order #{{ order.order_number }}</h5>
+                            <p class="card-text">Date: {{ order.date }}</p>
+                            <p class="card-text">Status: {{ order.status }}</p>
+                            <p class="card-text">Total: ${{ order.grand_total }}</p>
+                            <a href="{% url 'order_history' order.order_number %}" class="btn btn-black rounded-0 text-uppercase">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="col">
+                <p>You have no orders.</p>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
