@@ -12,6 +12,7 @@
     {% block extra_meta %}{% endblock %}
 
     {% block corecss %}
+    <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
@@ -29,14 +30,22 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+    <!-- mailchimp Pop Up -->
+    <script
+        id="mcjs">!function (c, h, i, m, p) { m = c.createElement(h), p = c.getElementsByTagName(h)[0], m.async = 1, m.src = i, p.parentNode.insertBefore(m, p) }(document, "script", "https://chimpstatic.com/mcjs-connected/js/users/5b20efc3e05e515c9bbcc4f50/8f3c2be2d188d0329bc27710b.js");</script>
+
     <!-- Stripe -->
     <script src="https://js.stripe.com/v3/"></script>
     {% endblock %}
     {% block extra_js %}{% endblock %}
-    <link rel="apple-touch-icon" sizes="180x180" href="https://res.cloudinary.com/dn2nul7ux/image/upload/v1721860597/favicon_io/apple-touch-icon_msutsk.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://res.cloudinary.com/dn2nul7ux/image/upload/v1721860597/favicon_io/favicon-32x32_smah6j.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://res.cloudinary.com/dn2nul7ux/image/upload/v1721860597/favicon_io/favicon-16x16_w2gh9v.png">
-    <link rel="manifest" href="https://res.cloudinary.com/dn2nul7ux/raw/upload/v1721860598/favicon_io/site_fsxc6z.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="https://res.cloudinary.com/dn2nul7ux/image/upload/v1721860597/favicon_io/apple-touch-icon_msutsk.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="https://res.cloudinary.com/dn2nul7ux/image/upload/v1721860597/favicon_io/favicon-32x32_smah6j.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="https://res.cloudinary.com/dn2nul7ux/image/upload/v1721860597/favicon_io/favicon-16x16_w2gh9v.png">
+    <link rel="manifest"
+        href="https://res.cloudinary.com/dn2nul7ux/raw/upload/v1721860598/favicon_io/site_fsxc6z.webmanifest">
     <title>GN-SHOP{% block extra_title %}{% endblock %}</title>
     <script
         id="mcjs">!function (c, h, i, m, p) { m = c.createElement(h), p = c.getElementsByTagName(h)[0], m.async = 1, m.src = i, p.parentNode.insertBefore(m, p) }(document, "script", "https://chimpstatic.com/mcjs-connected/js/users/5b20efc3e05e515c9bbcc4f50/8f3c2be2d188d0329bc27710b.js");</script>
@@ -153,21 +162,72 @@
     <!-- Footer block -->
     {% block footer %}
 
-    <div class="text-center text-dark p-3 bg-warning font-weight-bold costum-footer">
+    <footer class="footer bg-dark text-white mt-5 py-4">
         <div class="container">
-            <nav class="nav nav-pills flex-column flex-sm-row justify-content-center">
-                <a class="flex-sm-fill text-sm-center nav-link" href="#">Home</a>
-                <a class="flex-sm-fill text-sm-center nav-link" href="#">Products</a>
-                <a class="flex-sm-fill text-sm-center nav-link" href="#">Contact</a>
-            </nav>
-            <p>Copyright © 2024 GN-SHOP All Rights Reserved.</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <div id="mc_embed_signup">
+                        <form
+                            action="https://herokuapp.us22.list-manage.com/subscribe/post?u=5b20efc3e05e515c9bbcc4f50&amp;id=b4d334e758&amp;f_id=00a1d2e1f0"
+                            method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+                            class="validate" target="_blank">
+                            <div id="mc_embed_signup_scroll">
+                                <h2>Sign Up For Newsletter!</h2>
+                                <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+                                <div class="mc-field-group">
+                                    <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
+                                    <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="">
+                                </div>
+                                <div id="mce-responses" class="clear foot">
+                                    <div class="response" id="mce-error-response" style="display:none"></div>
+                                    <div class="response" id="mce-success-response" style="display:none"></div>
+                                </div>
+                                <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                                    <input type="text" name="b_5b20efc3e05e515c9bbcc4f50_b4d334e758" tabindex="-1"
+                                        value="">
+                                </div>
+                                <div class="optionalParent">
+                                    <div class="clear foot">
+                                        <input type="submit" value="Subscribe" name="subscribe"
+                                            id="mc-embedded-subscribe" class="button">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6 text-md-right">
+                    <p>© 2024 GN Shop. All rights reserved.</p>
+                    <a href="#" class="text-white">Privacy Policy</a>
+                    <span>|</span>
+                    <a href="#" class="text-white">Terms of Use</a>
+                </div>
+            </div>
         </div>
-    </div>
+    </footer>
 
+    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
     {% endblock %}
     {% block postloadjs %}
     <script type="text/javascript">
         $('.toast').toast('show');
+        (function ($) {
+            window.fnames = new Array();
+            window.ftypes = new Array();
+            fnames[0] = 'EMAIL';
+            ftypes[0] = 'email';
+            fnames[1] = 'FNAME';
+            ftypes[1] = 'text';
+            fnames[2] = 'LNAME';
+            ftypes[2] = 'text';
+            fnames[3] = 'ADDRESS';
+            ftypes[3] = 'address';
+            fnames[4] = 'PHONE';
+            ftypes[4] = 'phone';
+            fnames[5] = 'BIRTHDAY';
+            ftypes[5] = 'birthday';
+        }(jQuery));
+        var $mcj = jQuery.noConflict(true);
     </script>
     {% endblock %}
 
