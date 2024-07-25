@@ -11,7 +11,32 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
+.reviews-section {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
 
+.review {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.review:last-child {
+    border-bottom: none;
+}
+
+.review strong {
+    display: block;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+.review p {
+    margin: 5px 0;
+}
 .cookie-consent {
     position: fixed;
     bottom: 0;

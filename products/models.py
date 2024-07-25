@@ -39,20 +39,6 @@ class Product(models.Model):
         return self.name
 
 
-class ProductReview(models.Model):
-    """Review model for products."""
-    product = models.ForeignKey(
-        Product, on_delete=models.CASCADE, related_name='reviews'
-    )
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    rating = models.IntegerField(choices=[(i, str(i)) for i in range(1, 6)])
-    comment = models.TextField()
-    created_at = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return f"Review by {self.user.username} for {self.product.name}"
-
-
 class Wishlist(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE, null=True, blank=True)

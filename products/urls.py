@@ -13,12 +13,7 @@ urlpatterns = [
         views.delete_product,
         name='delete_product'
     ),
-    # Reviews and wishlist management
-    path(
-        'product/<int:product_id>/add_review/',
-        views.add_review,
-        name='add_review'
-    ),
+    # wishlist management
     path(
         'product/<int:product_id>/add_to_wishlist/',
         views.add_to_wishlist,
@@ -38,4 +33,5 @@ urlpatterns = [
     ),
     # Success page
     path('success/', views.success, name='success_url'),
+    path('<int:product_id>/reviews/', views.all_reviews, name='all_reviews'),
 ]

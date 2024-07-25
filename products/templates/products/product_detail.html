@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -49,7 +48,7 @@
                         </small>
                     {% endif %}
                     {% if user.is_authenticated %}
-                        <a href="{% url 'add_to_wishlist' product.id %}" class="btn btn-outline-primary mt-3">Add to Wishlist</a>
+                        <a href="{% url 'add_to_wishlist' product.id %}" class="btn btn-outline-primary mt-3">❤️ Wishlist</a>
                     {% else %}
                         <a href="{% url 'account_login' %}?next={% url 'product_detail' product.id %}" class="btn btn-outline-primary mt-3">Login to add to Wishlist</a>
                     {% endif %}
@@ -111,6 +110,34 @@
                             {% endwith %}
                         </div>
                     </form>
+                    <div class="reviews-section">
+                        {% if reviews %}
+                            <h2>Latest Review</h2>
+                            <div class="review">
+                                <strong>{{ reviews.0.customer_name }}</strong> - <em>{{ reviews.0.created_at|date:"d M Y" }}</em>
+                                <p>Rating: {{ reviews.0.rating }} ⭐</p>
+                                <p>{{ reviews.0.comment }}</p>
+                            </div>
+                    
+                            {% if reviews|length > 1 %}
+                                <h3>Other Reviews</h3>
+                                {% for review in reviews|slice:"1:2 " %}
+                                    <div class="review">
+                                        <strong>{{ review.customer_name }}</strong> - <em>{{ review.created_at|date:"d M Y" }}</em>
+                                        <p>Rating: {{ review.rating }} ⭐</p>
+                                        <p>{{ review.comment }}</p>
+                                    </div>
+                                {% endfor %}
+                                {% if reviews|length > 1 %}
+                                    <div class="show-more">
+                                        <a href="{% url 'all_reviews' product.id %}">Show More Reviews</a>
+                                    </div>
+                                {% endif %}
+                            {% endif %}
+                        {% else %}
+                            <p>No reviews yet.</p>
+                        {% endif %}
+                    </div>
                 </div>
             </div>
         </div>

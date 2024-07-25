@@ -3,7 +3,7 @@ from django.core.mail import send_mail
 from django.conf import settings
 from django.utils.html import format_html
 from .models import (
-    Product, Category, ProductReview, Wishlist, Testimonial, ContactRequest
+    Product, Category, Wishlist, Testimonial, ContactRequest
 )
 
 
@@ -52,6 +52,5 @@ class TestimonialAdmin(admin.ModelAdmin):
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Testimonial, TestimonialAdmin)
-admin.site.register(ProductReview)
 admin.site.register(Wishlist)
 admin.site.register(ContactRequest)

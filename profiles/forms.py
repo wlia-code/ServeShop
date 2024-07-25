@@ -1,5 +1,7 @@
 from django import forms
-from .models import UserProfile
+from .models import UserProfile, ProductReview
+from products.models import Product
+from checkout.models import Order, OrderLineItem
 
 
 class UserProfileForm(forms.ModelForm):
@@ -32,3 +34,13 @@ class UserProfileForm(forms.ModelForm):
                 self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'border-black rounded-0 profile-form-input'
             self.fields[field].label = False
+
+
+class ProductReviewForm(forms.ModelForm):
+    class Meta:
+        model = ProductReview
+        fields = ['customer_name', 'rating', 'comment']
+        widgets = {
+            'rating': forms.Select(choices=[(i, str(i)) for i in range(1, 6)]),
+            'comment': forms.Textarea(attrs={'rows': 4}),
+        }

@@ -1,11 +1,13 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
-from .models import (Product, Category, ProductReview, Wishlist, Testimonial,
+from .models import (Product, Category, Wishlist, Testimonial,
                      ContactRequest)
 from .forms import ProductForm, ContactForm, TestimonialForm
+from profiles.models import ProductReview
 
 
 def all_products(request):
@@ -63,15 +65,25 @@ def all_products(request):
 
 
 def product_detail(request, product_id):
-    """View to show individual product details."""
-    product = get_object_or_404(Product, pk=product_id)
-
+    product = get_object_or_404(Product, id=product_id)
+    reviews = ProductReview.objects.filter(product=product, approved=True).order_by('-created_at')
+    
     context = {
         'product': product,
+        'reviews': reviews
     }
-
     return render(request, 'products/product_detail.html', context)
 
+
+def all_reviews(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    reviews = ProductReview.objects.filter(product=product, approved=True).order_by('-created_at')
+    
+    context = {
+        'product': product,
+        'reviews': reviews
+    }
+    return render(request, 'products/all_reviews.html', context)
 
 @login_required
 def add_product(request):
@@ -143,21 +155,6 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
-
-
-@login_required
-def add_review(request, product_id):
-    """Add a review to a product."""
-    product = get_object_or_404(Product, id=product_id)
-    if request.method == 'POST':
-        rating = request.POST['rating']
-        comment = request.POST['comment']
-        ProductReview.objects.create(
-            product=product, user=request.user,
-            rating=rating, comment=comment
-        )
-        return redirect('product_detail', product_id=product.id)
-    return render(request, 'products/add_review.html', {'product': product})
 
 
 @login_required

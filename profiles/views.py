@@ -1,9 +1,11 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .models import UserProfile
-from .forms import UserProfileForm
-from checkout.models import Order
+from .models import UserProfile, ProductReview
+from .forms import UserProfileForm, ProductReviewForm
+from checkout.models import Order, OrderLineItem
+from products.models import Product
+from django.contrib.auth.models import User
 
 
 @login_required
@@ -54,3 +56,22 @@ def my_orders(request):
     orders = Order.objects.filter(user_profile=profile).order_by('-date')
     return render(request, 'profiles/my_orders.html', {'orders': orders})
 
+
+
+@login_required
+def add_review(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+
+    if request.method == 'POST':
+        form = ProductReviewForm(request.POST)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.product = product
+            review.approved = False
+            review.save()
+            messages.success(request, 'Your review has been submitted and is awaiting approval!')
+            return redirect('product_detail', product_id=product_id)
+    else:
+        form = ProductReviewForm()
+
+    return render(request, 'profiles/add_review.html', {'form': form, 'product': product})
