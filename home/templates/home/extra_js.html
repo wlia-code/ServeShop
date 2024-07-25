@@ -1,4 +1,4 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <script>
     function fetchProducts() {
         $.ajax({
@@ -28,7 +28,6 @@
         });
     }
 
-    
     setInterval(fetchProducts, 30000); // 30000 ms = 30 seconds
     fetchProducts();  // Also fetch immediately on page load
 </script>

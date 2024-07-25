@@ -12,10 +12,11 @@
 
 <!-- Main content -->
 {% block content %}
+<main>
+<section>
 <div class="text-center text-warning pt-4 shadow-custom">
     <span class="h2 font-weight-bold">Our Featured Products</span>
 </div>
-
 <div class="container">
     <div class="row" id="product-container">
         {% for product in products %}
@@ -37,24 +38,47 @@
     <button type="button" class="btn btn btn-warning">More Products Here</button>
     <hr class="border border-warning my-2" style="opacity: 0.5;">
 </div>
+</section>
 <section id="highlighted-testimonials" class="mt-5">
     <div class="container">
-        <h2 class="hero-title">What Our Customers Say</h2>
+        <div class="text-center text-warning pt-4 shadow-custom">
+            <span class="h2 font-weight-bold">What Our Customers Say</span>
+        </div>
         <div class="row">
             {% for testimonial in testimonials %}
-            <div class="col-md-4 col-sm-6 mb-4">
-                <div class="testimonial-card p-3">
-                    <h4>{{ testimonial.user.username }}</h4>
-                    <p>{{ testimonial.text|truncatechars:100 }}</p>
+            <div class="col-md-4 col-sm-6 mb-4 d-flex justify-content-center">
+                <div class="card" style="width: 18rem;">
+                    {% if testimonial.image %}
+                    <img class="card-img-top" src="{{ testimonial.image }}" alt="{{ testimonial.username }}'s photo" style="max-height: 200px; object-fit: cover;">
+                    {% else %}
+                    <img class="card-img-top" src="{% static 'images/default-user.png' %}" alt="Default user image" style="object-fit: cover; height: 200px;">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ testimonial.username }}</h5>
+                        <div class="rating mb-2">
+                            {% for i in testimonial.star_range %}
+                            <span class="fa fa-star checked"></span>
+                            {% endfor %}
+                            {% for i in testimonial.empty_star_range %}
+                            <span class="fa fa-star"></span>
+                            {% endfor %}
+                        </div>
+                        <p class="card-text">{{ testimonial.text|truncatechars:100 }}</p>
+                        {% if testimonial.review %}
+                        <p class="font-italic">{{ testimonial.review|truncatechars:100 }}</p>
+                        {% endif %}
+                        <a href="{% url 'testimonials' %}" class="btn btn-primary">Read More</a>
+                    </div>
                 </div>
             </div>
             {% endfor %}
         </div>
         <div class="text-center">
-            <a href="{% url 'testimonials' %}" class="btn btn-primary mt-3">Read More Reviews</a>
+            <a href="{% url 'testimonials' %}" class="btn btn-warning mt-3">Read More Reviews</a>
         </div>
     </div>
 </section>
+</main>
 {% endblock %}
 
 {% block extra_js %}

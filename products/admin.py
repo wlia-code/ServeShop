@@ -21,9 +21,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 class TestimonialAdmin(admin.ModelAdmin):
-    list_display = (
-        'user', 'text', 'approved', 'created_at', 'image_tag'
-    )
+    list_display = ('user', 'text', 'rating', 'approved', 'created_at', 'image_tag')
     list_filter = ('approved', 'created_at')
     actions = ['approve_testimonials']
 

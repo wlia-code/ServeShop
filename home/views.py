@@ -24,12 +24,35 @@ def ajax_latest_products(request):
 def index(request):
     # Fetch the latest three approved testimonials for the home page
     testimonials = Testimonial.objects.filter(approved=True).order_by('-created_at')[:3]
+    # Add star range information to each testimonial
+    testimonials_data = []
+    for testimonial in testimonials:
+        testimonials_data.append({
+            'username': testimonial.user.username,
+            'text': testimonial.text,
+            'review': testimonial.review,
+            'rating': testimonial.rating,
+            'image': testimonial.image.url if testimonial.image else None,
+            'star_range': range(testimonial.rating),
+            'empty_star_range': range(5 - testimonial.rating),
+        })
     return render(request, 'home/index.html', {
-        'testimonials': testimonials,
+        'testimonials': testimonials_data,
     })
-
 
 def testimonials(request):
     # Fetch all approved testimonials
     testimonials = Testimonial.objects.filter(approved=True).order_by('-created_at')
-    return render(request, 'home/testimonials.html', {'testimonials': testimonials})
+    # Add star range information to each testimonial
+    testimonials_data = []
+    for testimonial in testimonials:
+        testimonials_data.append({
+            'username': testimonial.user.username,
+            'text': testimonial.text,
+            'review': testimonial.review,
+            'rating': testimonial.rating,
+            'image': testimonial.image.url if testimonial.image else None,
+            'star_range': range(testimonial.rating),
+            'empty_star_range': range(5 - testimonial.rating),
+        })
+    return render(request, 'home/testimonials.html', {'testimonials': testimonials_data})

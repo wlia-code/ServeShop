@@ -203,6 +203,7 @@ def submit_testimonial(request):
     return render(request, "products/submit_testimonial.html", {"form": form})
 
 
+
 def submit_contact_request(request):
     """Submit a contact request."""
     if request.method == "POST":

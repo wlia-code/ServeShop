@@ -11,44 +11,76 @@
     {% endblock %}
     {% block extra_meta %}{% endblock %}
 
-    {% block corecss %}
-    <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    {% endblock %}
-    {% block extra_css %}{% endblock %}
 
-    {% block corejs %}
-    <script src="https://kit.fontawesome.com/bc3084502c.js" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
-    <!-- mailchimp Pop Up -->
-    <script
-        id="mcjs">!function (c, h, i, m, p) { m = c.createElement(h), p = c.getElementsByTagName(h)[0], m.async = 1, m.src = i, p.parentNode.insertBefore(m, p) }(document, "script", "https://chimpstatic.com/mcjs-connected/js/users/5b20efc3e05e515c9bbcc4f50/8f3c2be2d188d0329bc27710b.js");</script>
+{% block extra_css %}{% endblock %}
 
-    <!-- Stripe -->
-    <script src="https://js.stripe.com/v3/"></script>
-    {% endblock %}
-    {% block extra_js %}{% endblock %}
-    <link rel="apple-touch-icon" sizes="180x180"
-        href="https://res.cloudinary.com/dn2nul7ux/image/upload/v1721860597/favicon_io/apple-touch-icon_msutsk.png">
-    <link rel="icon" type="image/png" sizes="32x32"
-        href="https://res.cloudinary.com/dn2nul7ux/image/upload/v1721860597/favicon_io/favicon-32x32_smah6j.png">
-    <link rel="icon" type="image/png" sizes="16x16"
-        href="https://res.cloudinary.com/dn2nul7ux/image/upload/v1721860597/favicon_io/favicon-16x16_w2gh9v.png">
-    <link rel="manifest"
-        href="https://res.cloudinary.com/dn2nul7ux/raw/upload/v1721860598/favicon_io/site_fsxc6z.webmanifest">
-    <title>GN-SHOP{% block extra_title %}{% endblock %}</title>
-    <script
-        id="mcjs">!function (c, h, i, m, p) { m = c.createElement(h), p = c.getElementsByTagName(h)[0], m.async = 1, m.src = i, p.parentNode.insertBefore(m, p) }(document, "script", "https://chimpstatic.com/mcjs-connected/js/users/5b20efc3e05e515c9bbcc4f50/8f3c2be2d188d0329bc27710b.js");</script>
+{% block corejs %}
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/bc3084502c.js" crossorigin="anonymous"></script>
+<!-- Cookie Consent Banner -->
+<script src="{% static 'js/cookieConsent.js' %}"></script>
+<!-- Mailchimp Pop Up -->
+<script id="mcjs">
+    !function (c, h, i, m, p) {
+        m = c.createElement(h), p = c.getElementsByTagName(h)[0],
+            m.async = 1, m.src = i, p.parentNode.insertBefore(m, p)
+    }(document, "script", "https://chimpstatic.com/mcjs-connected/js/users/5b20efc3e05e515c9bbcc4f50/8f3c2be2d188d0329bc27710b.js");
+</script>
+<!-- <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js" defer></script> -->
+<!-- Stripe -->
+<script src="https://js.stripe.com/v3/"></script>
+
+{% endblock %}
+
+{% block postloadjs %}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.toast').toast('show');
+    });
+
+    (function ($) {
+        window.fnames = new Array();
+        window.ftypes = new Array();
+        fnames[0] = 'EMAIL';
+        ftypes[0] = 'email';
+        fnames[1] = 'FNAME';
+        ftypes[1] = 'text';
+        fnames[2] = 'LNAME';
+        ftypes[2] = 'text';
+        fnames[3] = 'ADDRESS';
+        ftypes[3] = 'address';
+        fnames[4] = 'PHONE';
+        ftypes[4] = 'phone';
+        fnames[5] = 'BIRTHDAY';
+        ftypes[5] = 'birthday';
+    }(jQuery));
+</script>
+{% endblock %}
+{% block corecss %}
+<link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+{% endblock %}
+{% block extra_js %}{% endblock %}
+
+<link rel="apple-touch-icon" sizes="180x180"
+    href="https://res.cloudinary.com/dn2nul7ux/image/upload/v1721860597/favicon_io/apple-touch-icon_msutsk.png">
+<link rel="icon" type="image/png" sizes="32x32"
+    href="https://res.cloudinary.com/dn2nul7ux/image/upload/v1721860597/favicon_io/favicon-32x32_smah6j.png">
+<link rel="icon" type="image/png" sizes="16x16"
+    href="https://res.cloudinary.com/dn2nul7ux/image/upload/v1721860597/favicon_io/favicon-16x16_w2gh9v.png">
+<link rel="manifest"
+    href="https://res.cloudinary.com/dn2nul7ux/raw/upload/v1721860598/favicon_io/site_fsxc6z.webmanifest">
+<title>GN-SHOP{% block extra_title %}{% endblock %}</title>
 </head>
 
 <body>
@@ -140,20 +172,20 @@
     {% if messages %}
     <div class="message-container">
         {% for message in messages %}
-        {% with message.level as level %}
-        {% if level == 40 %}
-        {% include 'includes/toasts/toast_error.html' %}
-        {% elif level == 30 %}
-        {% include 'includes/toasts/toast_warning.html' %}
-        {% elif level == 25 %}
-        {% include 'includes/toasts/toast_success.html' %}
-        {% else %}
-        {% include 'includes/toasts/toast_info.html' %}
-        {% endif %}
-        {% endwith %}
+            {% with message.level as level %}
+                {% if level == 40 %}
+                    {% include 'includes/toasts/toast_error.html' %}
+                {% elif level == 30 %}
+                    {% include 'includes/toasts/toast_warning.html' %}
+                {% elif level == 25 %}
+                    {% include 'includes/toasts/toast_success.html' %}
+                {% else %}
+                    {% include 'includes/toasts/toast_info.html' %}
+                {% endif %}
+            {% endwith %}
         {% endfor %}
     </div>
-    {% endif %}
+{% endif %}
 
     {% block page_header %}
     {% endblock %}
@@ -197,40 +229,40 @@
                     </div>
                 </div>
                 <div class="col-md-6 text-md-right">
-                    <p>© 2024 GN Shop. All rights reserved.</p>
-                    <a href="#" class="text-white">Privacy Policy</a>
+                    <a href="https://www.termsfeed.com/live/c24915e2-c23b-4bb9-a63d-51e1c3791007" 
+                        class="text-white" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        aria-label="Privacy Policy - Opens in a new tab">
+                        Privacy Policy
+                    </a>
+
                     <span>|</span>
-                    <a href="#" class="text-white">Terms of Use</a>
+                    <a href="{% url 'submit_contact_request' %}" class="text-white">Contact Us</a>
+                </div>
+                <div class="col-md-6">
+                    <p>© 2024 GN Shop. All rights reserved.</p>
                 </div>
             </div>
         </div>
     </footer>
-
-    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
     {% endblock %}
-    {% block postloadjs %}
-    <script type="text/javascript">
-        $('.toast').toast('show');
-        (function ($) {
-            window.fnames = new Array();
-            window.ftypes = new Array();
-            fnames[0] = 'EMAIL';
-            ftypes[0] = 'email';
-            fnames[1] = 'FNAME';
-            ftypes[1] = 'text';
-            fnames[2] = 'LNAME';
-            ftypes[2] = 'text';
-            fnames[3] = 'ADDRESS';
-            ftypes[3] = 'address';
-            fnames[4] = 'PHONE';
-            ftypes[4] = 'phone';
-            fnames[5] = 'BIRTHDAY';
-            ftypes[5] = 'birthday';
-        }(jQuery));
-        var $mcj = jQuery.noConflict(true);
-    </script>
+    {% block cookies %}
+    <div id="cookieConsent" class="cookie-consent">
+        <p>
+            We use cookies to improve your experience on our site. By continuing to use our site, you accept our 
+            <a href="https://www.termsfeed.com/live/c24915e2-c23b-4bb9-a63d-51e1c3791007" 
+               class="text-white" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               aria-label="Privacy Policy - Opens in a new tab">
+               Privacy Policy
+            </a> 
+            and our use of cookies. 
+            <button id="acceptCookies" class="btn btn-primary">Accept</button>
+        </p>
+    </div>
+    
     {% endblock %}
-
 </body>
-
 </html>

@@ -70,13 +70,14 @@ class TestimonialForm(forms.ModelForm):
     """Form for Testimonial model."""
     class Meta:
         model = Testimonial
-        fields = ['text', 'review', 'image']
+        fields = ['text', 'rating', 'image']
         widgets = {
             'text': forms.Textarea(
                 attrs={'placeholder': 'Write your testimonial here...'}
             ),
-            'review': forms.TextInput(
-                attrs={'placeholder': 'Your review in brief...'}
+            'rating': forms.Select(
+                choices=[(i, str(i)) for i in range(1, 6)],
+                attrs={'class': 'form-control'}
             ),
             'image': forms.ClearableFileInput(),
         }
@@ -87,3 +88,4 @@ class TestimonialForm(forms.ModelForm):
         if len(text) < 10:
             raise ValidationError('The text must be at least 10 characters.')
         return text
+

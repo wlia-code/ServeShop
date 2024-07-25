@@ -66,6 +66,7 @@ class Testimonial(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     text = models.TextField()
     review = models.CharField(max_length=255, blank=True, null=True)
+    rating = models.PositiveSmallIntegerField(choices=[(i, str(i)) for i in range(1, 6)], default=5)
     image = models.ImageField(upload_to='testimonials/', blank=True, null=True)
     approved = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
