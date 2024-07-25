@@ -37,7 +37,24 @@
     <button type="button" class="btn btn btn-warning">More Products Here</button>
     <hr class="border border-warning my-2" style="opacity: 0.5;">
 </div>
-
+<section id="highlighted-testimonials" class="mt-5">
+    <div class="container">
+        <h2 class="hero-title">What Our Customers Say</h2>
+        <div class="row">
+            {% for testimonial in testimonials %}
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="testimonial-card p-3">
+                    <h4>{{ testimonial.user.username }}</h4>
+                    <p>{{ testimonial.text|truncatechars:100 }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="text-center">
+            <a href="{% url 'testimonials' %}" class="btn btn-primary mt-3">Read More Reviews</a>
+        </div>
+    </div>
+</section>
 {% endblock %}
 
 {% block extra_js %}

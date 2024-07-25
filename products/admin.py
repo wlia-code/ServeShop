@@ -1,32 +1,29 @@
 from django.contrib import admin
 from django.core.mail import send_mail
 from django.conf import settings
-from .models import Product, Category, ProductReview, Wishlist, Testimonial, ContactRequest
-
-# Register your models here.
+from django.utils.html import format_html
+from .models import (
+    Product, Category, ProductReview, Wishlist, Testimonial, ContactRequest
+)
 
 
 class ProductAdmin(admin.ModelAdmin):
     list_display = (
-        'sku',
-        'name',
-        'category',
-        'price',
-        'rating',
-        'image',
+        'sku', 'name', 'category', 'price', 'rating', 'image'
     )
-
     ordering = ('sku',)
 
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = (
-        'friendly_name',
-        'name',
+        'friendly_name', 'name'
     )
 
+
 class TestimonialAdmin(admin.ModelAdmin):
-    list_display = ('user', 'text', 'approved', 'created_at')
+    list_display = (
+        'user', 'text', 'approved', 'created_at', 'image_tag'
+    )
     list_filter = ('approved', 'created_at')
     actions = ['approve_testimonials']
 
@@ -35,12 +32,23 @@ class TestimonialAdmin(admin.ModelAdmin):
         for testimonial in queryset:
             send_mail(
                 'Your Testimonial is Approved',
-                'Your testimonial has been approved and is now visible on the site.',
+                'Your testimonial has been approved and is now visible '
+                'on the site.',
                 settings.DEFAULT_FROM_EMAIL,
                 [testimonial.user.email],
                 fail_silently=False,
             )
     approve_testimonials.short_description = "Approve selected testimonials"
+
+    def image_tag(self, obj):
+        if obj.image:
+            return format_html(
+                '<img src="{}" style="width: 45px; height:45px;" />'.format(
+                    obj.image.url
+                )
+            )
+        return None
+    image_tag.short_description = 'Image'
 
 
 admin.site.register(Product, ProductAdmin)
