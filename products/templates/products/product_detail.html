@@ -48,6 +48,11 @@
                             <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
                         </small>
                     {% endif %}
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'add_to_wishlist' product.id %}" class="btn btn-outline-primary mt-3">Add to Wishlist</a>
+                    {% else %}
+                        <a href="{% url 'account_login' %}?next={% url 'product_detail' product.id %}" class="btn btn-outline-primary mt-3">Login to add to Wishlist</a>
+                    {% endif %}
                     <p class="mt-3">{{ product.description }}</p>
                     <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                         {% csrf_token %}

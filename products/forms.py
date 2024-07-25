@@ -41,12 +41,6 @@ class ContactForm(forms.Form):
     subject = forms.CharField(max_length=100)
     message = forms.CharField(widget=forms.Textarea)
 
-    def clean_email(self):
-        """Validate email domain."""
-        email = self.cleaned_data.get('email')
-        if not email.endswith('@example.com'):
-            raise ValidationError('Use an email ending with @example.com.')
-        return email
 
     def send_email(self):
         """Send the form data via email."""

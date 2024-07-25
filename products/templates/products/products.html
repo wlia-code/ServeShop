@@ -88,6 +88,17 @@
                                                     <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
                                                 </small>
                                             {% endif %}
+                                            <form class="form-inline mt-3" action="{% url 'add_to_bag' product.id %}" method="POST">
+                                                {% csrf_token %}
+                                                <input type="hidden" name="quantity" value="1">
+                                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                                <button type="submit" class="btn btn-black rounded-0 text-uppercase">Add to Bag</button>
+                                            </form>
+                                            {% if user.is_authenticated %}
+                                                <a href="{% url 'add_to_wishlist' product.id %}" class="btn btn-outline-primary mt-2">Add to Wishlist</a>
+                                            {% else %}
+                                                <a href="{% url 'account_login' %}?next={% url 'product_detail' product.id %}" class="btn btn-outline-primary mt-2">Login to add to Wishlist</a>
+                                            {% endif %}
                                         </div>
                                     </div>
                                 </div>
@@ -154,5 +165,5 @@
                 window.location.replace(currentUrl);
             }
         })
-    </script>
+    </script> 
 {% endblock %}

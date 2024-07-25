@@ -162,20 +162,22 @@ def add_review(request, product_id):
 
 @login_required
 def add_to_wishlist(request, product_id):
-    """Add a product to the user's wishlist."""
     product = get_object_or_404(Product, id=product_id)
-    wishlist, created = Wishlist.objects.get_or_create(user=request.user)
-    wishlist.products.add(product)
-    return redirect('wishlist')
-
+    wishlist, created = Wishlist.objects.get_or_create(user=request.user, product=product)
+    
+    if created:
+        messages.success(request, f'Added {product.name} to your wishlist.')
+    else:
+        messages.info(request, f'{product.name} is already in your wishlist.')
+    
+    return redirect('product_detail', product_id=product.id)
 
 @login_required
 def view_wishlist(request):
     """View the user's wishlist."""
-    wishlist, created = Wishlist.objects.get_or_create(user=request.user)
-    products = wishlist.products.all()
+    wishlist_items = Wishlist.objects.filter(user=request.user)
     return render(request, 'products/wishlist.html', {
-        'wishlist': wishlist, 'products': products
+        'wishlist_items': wishlist_items
     })
 
 
