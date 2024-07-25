@@ -38,29 +38,6 @@
     <hr class="border border-warning my-2" style="opacity: 0.5;">
 </div>
 
-<!-- Testimonial Section -->
-<!-- <section id="customer-testimonials" class="testimonials-section mt-5">
-            <h2 class="hero-title">Testimonials</h2>
-            <div class="row">
-                {% for testimonial in testimonials %}
-                <div class="col-md-4 col-sm-6 mb-4">
-                    <div class="testimonial-card">
-                        <div class="testimonial-details">
-                            <h3>{{ testimonial.user.username }}</h3>
-                            <p>{{ testimonial.text|truncatechars:100 }}</p>
-                            {% if testimonial.text|length > 100 %}
-                            <button class="btn btn-link p-0 text-primary show-more-btn">Show More</button>
-                            {% endif %}
-                            {% if testimonial.review %}
-                            <p><small>{{ testimonial.review }}</small></p>
-                            {% endif %}
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </section> -->
-</div>
 {% endblock %}
 
 {% block extra_js %}
