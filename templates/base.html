@@ -9,8 +9,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {% endblock %}
-    {% block extra_meta %}{% endblock %}
+    {% block extra_meta %}
+    {% endblock %}
 
+{% block corecss %}
+<link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+{% endblock %}
 
 {% block extra_css %}{% endblock %}
 
@@ -39,38 +47,8 @@
 
 {% endblock %}
 
-{% block postloadjs %}
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('.toast').toast('show');
-    });
-
-    (function ($) {
-        window.fnames = new Array();
-        window.ftypes = new Array();
-        fnames[0] = 'EMAIL';
-        ftypes[0] = 'email';
-        fnames[1] = 'FNAME';
-        ftypes[1] = 'text';
-        fnames[2] = 'LNAME';
-        ftypes[2] = 'text';
-        fnames[3] = 'ADDRESS';
-        ftypes[3] = 'address';
-        fnames[4] = 'PHONE';
-        ftypes[4] = 'phone';
-        fnames[5] = 'BIRTHDAY';
-        ftypes[5] = 'birthday';
-    }(jQuery));
-</script>
+{% block extra_js %}
 {% endblock %}
-{% block corecss %}
-<link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
-<link rel="stylesheet" href="{% static 'css/base.css' %}">
-{% endblock %}
-{% block extra_js %}{% endblock %}
 
 <link rel="apple-touch-icon" sizes="180x180"
     href="https://res.cloudinary.com/dn2nul7ux/image/upload/v1721860597/favicon_io/apple-touch-icon_msutsk.png">
@@ -161,14 +139,11 @@
                 {% include 'includes/main-nav.html' %}
             </nav>
         </div>
-        {% block delivery-banner %}
         <div id="delivery-banner" class="row text-center">
             <div class="col bg-warning text-dark">
                 <h4 class="logo-font my-1">Free delivery on orders over ${{ free_delivery_threshold }}!</h4>
             </div>
         </div>
-        {% endblock %}
-
     </header>
     {% if messages %}
     <div class="message-container">
@@ -187,12 +162,8 @@
         {% endfor %}
     </div>
 {% endif %}
-
-    {% block page_header %}
-    {% endblock %}
-
-    {% block content %}{% endblock %}
-    <!-- Footer block -->
+{% block content %}
+{% endblock %}
     {% block footer %}
 
     <footer class="footer bg-dark text-white mt-5 py-4">
@@ -248,6 +219,7 @@
         </div>
     </footer>
     {% endblock %}
+
     {% block cookies %}
     <div id="cookieConsent" class="cookie-consent">
         <p>
@@ -263,7 +235,36 @@
             <button id="acceptCookies" class="btn btn-primary">Accept</button>
         </p>
     </div>
-    
     {% endblock %}
+    
+    {% block page_header %}
+    {% endblock %}
+
+
+
+    {% block postloadjs %}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.toast').toast('show');
+    });
+
+    (function ($) {
+        window.fnames = new Array();
+        window.ftypes = new Array();
+        fnames[0] = 'EMAIL';
+        ftypes[0] = 'email';
+        fnames[1] = 'FNAME';
+        ftypes[1] = 'text';
+        fnames[2] = 'LNAME';
+        ftypes[2] = 'text';
+        fnames[3] = 'ADDRESS';
+        ftypes[3] = 'address';
+        fnames[4] = 'PHONE';
+        ftypes[4] = 'phone';
+        fnames[5] = 'BIRTHDAY';
+        ftypes[5] = 'birthday';
+    }(jQuery));
+</script>
+{% endblock %}
 </body>
 </html>
