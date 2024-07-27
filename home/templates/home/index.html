@@ -24,7 +24,7 @@
                 {% for product in products %}
                 <div class="col-md-4 col-sm-6 mb-4 d-flex justify-content-center">
                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.name }}" style="max-height: 200px; object-fit: cover;">
+                        <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.name }}" style="max-height: 200px; object-fit: cover;" loading="lazy">
                         <div class="card-body" style="padding: 10px;">
                             <h5 class="card-title">{{ product.name }}</h5>
                             <p class="card-text" style="margin-bottom: 10px;"><strong>${{ product.price }}</strong></p>
@@ -52,9 +52,9 @@
                 <div class="col-md-4 col-sm-6 mb-4 d-flex justify-content-center">
                     <div class="card" style="width: 18rem;">
                         {% if testimonial.image %}
-                        <img class="card-img-top" src="{{ testimonial.image }}" alt="{{ testimonial.username }}'s photo" style="max-height: 150px; object-fit: cover;">
+                        <img class="card-img-top" src="{{ testimonial.image }}" alt="{{ testimonial.username }}'s photo" style="max-height: 150px; object-fit: cover;" loading="lazy">
                         {% else %}
-                        <img class="card-img-top" src="https://res.cloudinary.com/dn2nul7ux/image/upload/v1721860597/favicon_io/apple-touch-icon_msutsk.png" alt="Default user image" style="object-fit: cover; height: 150px;">
+                        <img class="card-img-top" src="https://res.cloudinary.com/dn2nul7ux/image/upload/v1721860597/favicon_io/apple-touch-icon_msutsk.png" alt="Default user image" style="object-fit: cover; height: 150px;" loading="lazy">
                         {% endif %}
                         <div class="card-body">
                             <h5 class="card-title">{{ testimonial.username }}</h5>
