@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
+{% block title %}{{ product.name }} - GN Shop{% endblock %}
+
+{% block meta_description %}{{ product.description|default:"Explore our unique product offerings!" }}{% endblock %}
+
+{% block meta_keywords %}{{ product.tags|join:", " }}{% endblock %}
 {% block page_header %}
     <div class="container header-container">
         <div class="row">

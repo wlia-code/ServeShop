@@ -6,11 +6,13 @@ html {
 body {
     background-color: #6d787c;
     color: #555;
-    font-family: 'Lato';
+    font-family: 'Lato', sans-serif; /* Added fallback font for better accessibility */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
+
+/* Reviews Section */
 .reviews-section {
     background-color: #f9f9f9;
     padding: 20px;
@@ -37,6 +39,8 @@ body {
 .review p {
     margin: 5px 0;
 }
+
+/* Cookie Consent Banner */
 .cookie-consent {
     position: fixed;
     bottom: 0;
@@ -45,7 +49,7 @@ body {
     color: white;
     padding: 10px 20px;
     text-align: center;
-    display: none;
+    display: none; /* Accessibility: use JavaScript to toggle this */
 }
 
 .cookie-consent p {
@@ -62,8 +66,7 @@ body {
     margin-left: 10px;
 }
 
-
-/* from Bulma */
+/* General Styles */
 .icon {
     align-items: center;
     display: inline-flex;
@@ -93,7 +96,7 @@ body {
 
 .btn-outline-black {
     background: white;
-    color: black !important; /* use important to override link colors for <a> elements */
+    color: black !important;
     border: 1px solid black;
 }
 
@@ -127,13 +130,13 @@ body {
 }
 
 .overlay {
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
-	position: fixed;
-	background: white;
-	z-index: -1;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: white;
+    z-index: -1;
 }
 
 a.category-badge > span.badge:hover {
@@ -159,6 +162,7 @@ input[name='q']::placeholder {
     color: #aab7c4;
 }
 
+/* Footer Section */
 .costum-footer {
     color: white;
     clear: both;
@@ -166,34 +170,34 @@ input[name='q']::placeholder {
     padding: 3rem 1rem;
     margin-top: auto;
 }
+
 .costum-footer a {
-	color: white;
-	text-decoration: none;
+    color: white;
+    text-decoration: none;
 }
 
 .costum-footer a:hover {
-	text-decoration: underline;
+    text-decoration: underline;
 }
 
 .footer-right {
-	display: flex;
-	align-items: center;
-	justify-content: flex-end;
-	gap: 5px;
-	flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+    flex-wrap: wrap;
 }
 
 .footer-right a,
 .footer-right p {
-	margin: 0;
+    margin: 0;
 }
 
 .footer-right i {
-	font-size: 1rem;
+    font-size: 1rem;
 }
-    
-/* ------------------------------- bootstrap toasts */
 
+/* Bootstrap Toasts */
 .message-container {
     position: fixed;
     top: 72px;
@@ -209,19 +213,18 @@ input[name='q']::placeholder {
     height: 2px;
 }
 
-/* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
 .arrow-up {
-    width: 0; 
-    height: 0; 
+    width: 0;
+    height: 0;
     border-left: 4px solid transparent;
-    border-right: 4px solid transparent; 
+    border-right: 4px solid transparent;
     border-bottom: 10px solid black;
     position: absolute;
     top: -10px;
     right: 36px;
 }
 
-/* Convenience classes - colors copied from Bootstrap */
+/* Arrow Colors */
 .arrow-primary {
     border-bottom-color: #007bff !important;
 }
@@ -357,8 +360,7 @@ ul, ol {
   }
 }
 
-/* Allauth form formatting */
-
+/* Allauth Form Styling */
 .allauth-form-inner-content p {
     margin-top: 1.5rem; /* mt-4 */
     color: #6c757d; /* text-secondary */
@@ -379,8 +381,7 @@ ul, ol {
 
 .allauth-form-inner-content button,
 .allauth-form-inner-content input[type='submit'] {
-	/* btn */
-	display: inline-block;
+    display: inline-block;
     font-weight: 400;
     color: #fff;
     text-align: center;
@@ -395,24 +396,21 @@ ul, ol {
     font-size: 1rem;
     line-height: 1.5;
     border-radius: 0;
-
-    /* standard bootstrap btn transitions */
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 .allauth-form-inner-content button:hover,
-.allauth-form-inner-content input[type='submit']:hover {	
-	color: #fff;
+.allauth-form-inner-content input[type='submit']:hover {    
+    color: #fff;
     background-color: #222;
     border-color: #222;
 }
 
 .allauth-form-inner-content a {
-	color: #17a2b8;
+    color: #17a2b8;
 }
 
 /* Product Form */
-
 .btn-file {
     position: relative;
     overflow: hidden;
@@ -439,12 +437,13 @@ ul, ol {
     border-radius: 0;
 }
 
+/* Testimonial Cards */
 .testimonial-cards-container .card {
     background-color: #0056b3; /* Darker blue for contrast */
     border: none;
 }
 
-/* fixed top navbar only on medium and up */
+/* Fixed top navbar only on medium and up */
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
         position: fixed;
@@ -459,16 +458,16 @@ ul, ol {
     }
 }
 
-/* pad the top a bit when navbar is collapsed on mobile */
+/* Padding adjustments for mobile */
 @media (max-width: 991px) {
     .header-container {
         padding-top: 116px;
     }
 
     body {
-            display: flex;
-    flex-direction: column;
-    min-height: 100vh;;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
     }
 
     .display-4.logo-font.text-black {
@@ -507,90 +506,94 @@ ul, ol {
         padding: .25rem .5rem !important;
     }
 }
+
+/* Hero Title */
 .hero-title {
-	font-size: 40px;
-	text-align: center;
-	color: #919191;
-	margin-bottom: 30px;
+    font-size: 40px;
+    text-align: center;
+    color: #919191;
+    margin-bottom: 30px;
 }
 
+/* Product and Testimonial Sections */
 .products-section,
 .testimonials-section {
-	background: linear-gradient(0deg, #00486c 60%, #eee 40%);
-	padding: 50px 0;
-	text-align: center;
+    background: linear-gradient(0deg, #00486c 60%, #eee 40%);
+    padding: 50px 0;
+    text-align: center;
 }
 
 .product-card,
 .testimonial-card {
-	background-color: #f1f1f1;
-	padding: 2em 1em;
-	margin: 0.5em;
-	box-sizing: border-box;
-	box-shadow: 0 1px 30px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.24);
-	text-align: center;
-	transition: all 0.3s ease;
+    background-color: #f1f1f1;
+    padding: 2em 1em;
+    margin: 0.5em;
+    box-sizing: border-box;
+    box-shadow: 0 1px 30px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.24);
+    text-align: center;
+    transition: all 0.3s ease;
 }
 
 .product-card:hover,
 .testimonial-card:hover {
-	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-	transform: translateY(-5px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    transform: translateY(-5px);
 }
 
 .product-image {
-	width: 100%;
-	height: 200px;
-	background-size: cover;
-	background-position: center;
-	margin-bottom: 20px;
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 20px;
 }
 
 .product-details,
 .testimonial-details {
-	margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .product-details h3,
 .testimonial-details h3 {
-	font-size: 1.5em;
-	color: #333;
+    font-size: 1.5em;
+    color: #333;
 }
 
 .product-details p,
 .testimonial-details p {
-	font-size: 1em;
-	font-weight: 200;
+    font-size: 1em;
+    font-weight: 200;
 }
 
+/* Button Styles */
 .btn-hover {
-	cursor: pointer;
-	display: inline-block;
-	padding: 10px 20px;
-	margin: 0;
-	font-size: 14px;
-	border: none;
-	border-radius: 5px;
-	background-color: #00486c;
-	color: #fff;
-	text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    background-color: #00486c;
+    color: #fff;
+    text-decoration: none;
 }
 
 .btn-hover:hover {
-	background-color: #00304d;
+    background-color: #00304d;
 }
 
 .btn-hover.color-9 {
-	background-color: #ff6f61;
-	color: #fff;
+    background-color: #ff6f61;
+    color: #fff;
 }
 
 .btn-hover.color-9:hover {
-	background-color: #ff4d4d;
+    background-color: #ff4d4d;
 }
 
 .btn-link {
-	font-weight: bold;
+    font-weight: bold;
 }
 
 .shadow-custom {

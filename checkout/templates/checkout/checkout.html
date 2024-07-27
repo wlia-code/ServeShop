@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% load bag_tools %}
-
+{% block title %}CHECKOUT - GN Shop{% endblock %}
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
@@ -27,7 +27,7 @@
 
         <div class="row">
             <div class="col-12 col-lg-6 order-lg-last mb-5">
-                <p class="text-muted">Order Summary ({{ product_count }})</p>
+                <p class="text-muted" aria-live="polite">Order Summary ({{ product_count }})</p>
                 <div class="row">
                     <div class="col-7 offset-2">
                         <p class="mb-1 mt-0 small text-muted">Item</p>
@@ -39,11 +39,11 @@
                 {% for item in bag_items %}
                     <div class="row">
                         <div class="col-2 mb-1">
-                            <a href="{% url 'product_detail' item.product.id %}">
+                            <a href="{% url 'product_detail' item.product.id %}" aria-label="View details for {{ item.product.name }}">
                                 {% if item.product.image %}
-                                    <img class="w-100" src="{{ item.product.image.url }}" alt="{{ product.name }}">
+                                    <img class="w-100" src="{{ item.product.image.url }}" alt="Image of {{ item.product.name }}">
                                 {% else %}
-                                    <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                    <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="No image available for {{ item.product.name }}">
                                 {% endif %}
                             </a>
                         </div>
@@ -90,16 +90,16 @@
                         {{ order_form.postcode | as_crispy_field }}
                         {{ order_form.country | as_crispy_field }}
                         <div class="form-check form-check-inline float-right mr-0">
-							{% if user.is_authenticated %}
-								<label class="form-check-label" for="id-save-info">Save this delivery information to my profile</label>
+                            {% if user.is_authenticated %}
+                                <label class="form-check-label" for="id-save-info">Save this delivery information to my profile</label>
                                 <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info" checked>
-							{% else %}
-								<label class="form-check-label" for="id-save-info">
+                            {% else %}
+                                <label class="form-check-label" for="id-save-info">
                                     <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or 
                                     <a class="text-info" href="{% url 'account_login' %}">login</a> to save this information
                                 </label>
-							{% endif %}
-						</div>
+                            {% endif %}
+                        </div>
                     </fieldset>
                     <fieldset class="px-3">
                         <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
@@ -112,30 +112,30 @@
                     </fieldset>
 
                     <div class="submit-button text-right mt-5 mb-2">                    
-						<a href="{% url 'view_bag' %}" class="btn btn-outline-black rounded-0">
-							<span class="icon">
-								<i class="fas fa-chevron-left"></i>
-							</span>
-							<span class="font-weight-bold">Adjust Bag</span>
-						</a>
-						<button id="submit-button" class="btn btn-black rounded-0">
-							<span class="font-weight-bold">Complete Order</span>
-							<span class="icon">
-								<i class="fas fa-lock"></i>
-							</span>
-						</button>
-						<p class="small text-danger my-0">
-							<span class="icon">
-								<i class="fas fa-exclamation-circle"></i>
-							</span>
-							<span>Your card will be charged <strong>${{ grand_total|floatformat:2 }}</strong></span>
-						</p>
-					</div>
+                        <a href="{% url 'view_bag' %}" class="btn btn-outline-black rounded-0" aria-label="Adjust items in your bag">
+                            <span class="icon">
+                                <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                            </span>
+                            <span class="font-weight-bold">Adjust Bag</span>
+                        </a>
+                        <button id="submit-button" class="btn btn-black rounded-0" aria-label="Complete your order securely">
+                            <span class="font-weight-bold">Complete Order</span>
+                            <span class="icon">
+                                <i class="fas fa-lock" aria-hidden="true"></i>
+                            </span>
+                        </button>
+                        <p class="small text-danger my-0" aria-live="assertive">
+                            <span class="icon">
+                                <i class="fas fa-exclamation-circle" aria-hidden="true"></i>
+                            </span>
+                            <span>Your card will be charged <strong>${{ grand_total|floatformat:2 }}</strong></span>
+                        </p>
+                    </div>
                 </form>
             </div>
         </div>
     </div>
-    <div id="loading-overlay">
+    <div id="loading-overlay" role="status" aria-live="polite">
         <h1 class="text-light logo-font loading-spinner">
             <span class="icon">
                 <i class="fas fa-3x fa-sync-alt fa-spin"></i>

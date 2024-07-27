@@ -6,7 +6,7 @@
     <!-- Meta Configuration -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Default Title{% endblock %}</title>
+    <title>{% block title %}GN-SHOP{% endblock %}</title>
     <meta name="description" content="{% block meta_description %}Default description that can be overridden by individual pages.{% endblock %}">
     <meta name="keywords" content="{% block meta_keywords %}default, keywords{% endblock %}">
     {% block extra_meta %}{% endblock %}
@@ -48,10 +48,11 @@
         href="https://res.cloudinary.com/dn2nul7ux/raw/upload/v1721860598/favicon_io/site_fsxc6z.webmanifest">
 </head>
 <body>
+    <!-- Navbar/Header Section -->
     <header class="container-fluid fixed-top">
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
-                <a href="{% url 'home' %}" class="nav-link main-logo-link">
+                <a href="{% url 'home' %}" class="nav-link main-logo-link" aria-label="Go to GN Shop home page">
                     <h2 class="logo-font text-black my-0"><strong>GN</strong> Shop</h2>
                 </a>
             </div>
@@ -73,10 +74,9 @@
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     <li class="list-inline-item dropdown">
-                        <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
+                        <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="User options">
                             <div class="text-center">
-                                <div><i class="fas fa-user fa-lg"></i></div>
+                                <div><i class="fas fa-user fa-lg" aria-hidden="true"></i></div>
                                 <p class="my-0">My Account</p>
                             </div>
                         </a>
@@ -98,10 +98,9 @@
                         </div>
                     </li>
                     <li class="list-inline-item">
-                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
-                            href="{% url 'view_bag' %}">
+                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}" aria-label="View your shopping bag">
                             <div class="text-center">
-                                <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                                <div><i class="fas fa-shopping-bag fa-lg" aria-hidden="true"></i></div>
                                 <p class="my-0">
                                     {% if grand_total %}
                                     ${{ grand_total|floatformat:2 }}
@@ -117,22 +116,24 @@
         </div>
         <div class="row bg-white">
             <nav class="navbar navbar-expand-lg navbar-light w-100">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
-                    aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 {% include 'includes/mobile-top-header.html' %}
                 {% include 'includes/main-nav.html' %}
             </nav>
         </div>
-        <div id="delivery-banner" class="row text-center">
-            <div class="col bg-warning text-dark">
+        <!-- Delivery Banner Section -->
+        <div id="delivery-banner" class="row text-center" aria-live="polite">
+            <div class="col bg-dark text-white">
                 <h4 class="logo-font my-1">Free delivery on orders over ${{ free_delivery_threshold }}!</h4>
             </div>
         </div>
     </header>
+    
+    <!-- Messages Section -->
     {% if messages %}
-    <div class="message-container">
+    <div class="message-container" aria-live="polite">
         {% for message in messages %}
             {% with message.level as level %}
                 {% if level == 40 %}
@@ -147,43 +148,39 @@
             {% endwith %}
         {% endfor %}
     </div>
-{% endif %}
+    {% endif %}
 
-{% block page_header %}
-{% endblock %}
-{% block content %}
-{% endblock %}
+    {% block page_header %}
+    {% endblock %}
+    {% block content %}
+    {% endblock %}
 
+    <!-- Footer Section -->
     {% block footer %}
-
     <footer class="costum-footer p-1 bg-dark text-white">
         <div class="container">
             <div class="row">
-                <!-- Newsletter signup -->
+                <!-- Newsletter Signup -->
                 <div class="col-md-6">
                     <div id="mc_embed_signup">
-                        <form
-                            action="https://herokuapp.us22.list-manage.com/subscribe/post?u=5b20efc3e05e515c9bbcc4f50&amp;id=b4d334e758&amp;f_id=00a1d2e1f0"
-                            method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
-                            class="validate" target="_blank">
+                        <form action="https://herokuapp.us22.list-manage.com/subscribe/post?u=5b20efc3e05e515c9bbcc4f50&amp;id=b4d334e758&amp;f_id=00a1d2e1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" aria-label="Sign up for our newsletter">
                             <div id="mc_embed_signup_scroll">
                                 <h2>Sign Up For Newsletter!</h2>
                                 <div class="mc-field-group">
                                     <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
-                                    <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="">
+                                    <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required aria-required="true">
                                 </div>
                                 <div id="mce-responses" class="clear foot">
                                     <div class="response" id="mce-error-response" style="display:none"></div>
                                     <div class="response" id="mce-success-response" style="display:none"></div>
                                 </div>
                                 <div aria-hidden="true" style="position: absolute; left: -5000px;">
-                                    <input type="text" name="b_5b20efc3e05e515c9bbcc4f50_b4d334e758" tabindex="-1"
-                                        value="">
+                                    <input type="text" id="Subscribe" name="b_5b20efc3e05e515c9bbcc4f50_b4d334e758" tabindex="-1" value="">
+                                    <label for="subscribe" class="sr-only">Sign Up For Newsletter!</label>
                                 </div>
                                 <div class="optionalParent">
                                     <div class="clear foot">
-                                        <input type="submit" value="Subscribe" name="subscribe"
-                                            id="mc-embedded-subscribe" class="button">
+                                        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" aria-label="Subscribe to our newsletter">
                                     </div>
                                 </div>
                             </div>
@@ -192,11 +189,7 @@
                 </div>
                 <div class="col-md-6 text-md-right">
                     <div class="footer-right">
-                        <a href="https://www.termsfeed.com/live/c24915e2-c23b-4bb9-a63d-51e1c3791007" 
-                            class="text-white" 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
-                            aria-label="Privacy Policy - Opens in a new tab">
+                        <a href="https://www.termsfeed.com/live/c24915e2-c23b-4bb9-a63d-51e1c3791007" class="text-white" target="_blank" rel="noopener noreferrer" aria-label="Privacy Policy - Opens in a new tab">
                             Privacy Policy
                         </a>
                         <span>|</span>
@@ -210,51 +203,50 @@
                         <span>|</span>
                         <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn - Opens in a new tab" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
                     </div>
+                </div>
             </div>
         </div>
     </footer>
     {% endblock %}
 
+    <!-- Cookie Consent Section -->
     {% block cookies %}
-    <div id="cookieConsent" class="cookie-consent">
+    <div id="cookieConsent" class="cookie-consent" aria-live="polite">
         <p>
             We use cookies to improve your experience on our site. By continuing to use our site, you accept our 
-            <a href="https://www.termsfeed.com/live/c24915e2-c23b-4bb9-a63d-51e1c3791007" 
-               class="text-white" 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               aria-label="Privacy Policy - Opens in a new tab">
+            <a href="https://www.termsfeed.com/live/c24915e2-c23b-4bb9-a63d-51e1c3791007" class="text-white" target="_blank" rel="noopener noreferrer" aria-label="Privacy Policy - Opens in a new tab">
                Privacy Policy
             </a> 
             and our use of cookies. 
-            <button id="acceptCookies" class="btn btn-primary">Accept</button>
+            <button id="acceptCookies" class="btn btn-primary" aria-label="Accept cookies">Accept</button>
         </p>
     </div>
     {% endblock %}
     
     {% block postloadjs %}
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('.toast').toast('show');
-    });
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.toast').toast('show');
+        });
 
-    (function ($) {
-        window.fnames = new Array();
-        window.ftypes = new Array();
-        fnames[0] = 'EMAIL';
-        ftypes[0] = 'email';
-        fnames[1] = 'FNAME';
-        ftypes[1] = 'text';
-        fnames[2] = 'LNAME';
-        ftypes[2] = 'text';
-        fnames[3] = 'ADDRESS';
-        ftypes[3] = 'address';
-        fnames[4] = 'PHONE';
-        ftypes[4] = 'phone';
-        fnames[5] = 'BIRTHDAY';
-        ftypes[5] = 'birthday';
-    }(jQuery)); 
-</script>
-{% endblock %}
+        (function ($) {
+            window.fnames = new Array();
+            window.ftypes = new Array();
+            fnames[0] = 'EMAIL';
+            ftypes[0] = 'email';
+            fnames[1] = 'FNAME';
+            ftypes[1] = 'text';
+            fnames[2] = 'LNAME';
+            ftypes[2] = 'text';
+            fnames[3] = 'ADDRESS';
+            ftypes[3] = 'address';
+            fnames[4] = 'PHONE';
+            ftypes[4] = 'phone';
+            fnames[5] = 'BIRTHDAY';
+            ftypes[5] = 'birthday';
+        }(jQuery)); 
+    </script>
+    {% endblock %}
 </body>
+
 </html>
