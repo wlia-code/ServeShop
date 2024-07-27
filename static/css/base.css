@@ -160,13 +160,38 @@ input[name='q']::placeholder {
 }
 
 .costum-footer {
-  color: white;
-  clear: both;
-  text-align: center;
-  padding: 3rem 1rem;
-  margin-top: auto;
+    color: white;
+    clear: both;
+    text-align: center;
+    padding: 3rem 1rem;
+    margin-top: auto;
+}
+.costum-footer a {
+	color: white;
+	text-decoration: none;
 }
 
+.costum-footer a:hover {
+	text-decoration: underline;
+}
+
+.footer-right {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 5px;
+	flex-wrap: wrap;
+}
+
+.footer-right a,
+.footer-right p {
+	margin: 0;
+}
+
+.footer-right i {
+	font-size: 1rem;
+}
+    
 /* ------------------------------- bootstrap toasts */
 
 .message-container {

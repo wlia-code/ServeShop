@@ -20,6 +20,7 @@ urlpatterns = [
         name='add_to_wishlist'
     ),
     path('wishlist/', views.view_wishlist, name='wishlist'),
+    path('wishlist/remove/', views.remove_from_wishlist_ajax, name='remove_from_wishlist_ajax'),
     # Submit testimonials and contact requests
     path(
         'submit_testimonial/',

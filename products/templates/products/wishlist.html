@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -8,7 +7,6 @@
         </div>
     </div>
 {% endblock %}
-
 {% block content %}
 <div class="overlay"></div>
 <div class="container">
@@ -22,35 +20,66 @@
     <div class="row">
         {% if wishlist_items %}
             {% for item in wishlist_items %}
-                <div class="col-md-4 col-sm-6 mb-4">
-                    <div class="card h-100 border-0">
-                        {% if item.product.image %}
-                        <a href="{% url 'product_detail' item.product.id %}">
-                            <img class="card-img-top img-fluid" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
-                        </a>
-                        {% else %}
-                        <a href="{% url 'product_detail' item.product.id %}">
-                            <img class="card-img-top img-fluid" src="{% static 'images/noimage.png' %}" alt="{{ item.product.name }}">
-                        </a>
-                        {% endif %}
-                        <div class="card-body pb-0">
-                            <p class="mb-0">{{ item.product.name }}</p>
-                            <p class="text-muted">${{ item.product.price }}</p>
-                        </div>
-                        <div class="card-footer bg-white pt-0 border-0 text-left">
-                            <a href="{% url 'product_detail' item.product.id %}" class="btn btn-outline-primary mt-2">View Product</a>
+                {% if item.product and item.product.id %}
+                    <div class="col-md-4 col-sm-6 mb-4" id="wishlist-item-{{ item.product.id }}">
+                        <div class="card h-100 border-0 wishlist-card">
+                            <a href="{% url 'product_detail' item.product.id %}">
+                                <img class="card-img-top img-fluid wishlist-image" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                            </a>
+                            <div class="card-body pb-0">
+                                <p class="mb-0">{{ item.product.name }}</p>
+                                <p class="text-muted">${{ item.product.price }}</p>
+                            </div>
+                            <div class="card-footer bg-white pt-0 border-0 text-left">
+                                <a href="{% url 'product_detail' item.product.id %}" class="btn btn-outline-primary mt-2">View Product</a>
+                                <button class="btn btn-outline-danger mt-2 remove-from-wishlist" data-product-id="{{ item.product.id }}">Remove from Wishlist</button>
+                            </div>
                         </div>
                     </div>
-                </div>
+                {% else %}
+                    <div class="col-md-4 col-sm-6 mb-4">
+                        <div class="card h-100 border-0">
+                            <div class="card-body pb-0">
+                                <p class="mb-0">Product not available</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
             {% endfor %}
         {% else %}
             <div class="col">
-                <p class="text-center">Your wishlist is currently empty.</p>
+                <p class="text-center">Your wishlist is currently empty</p>
             </div>
         {% endif %}
     </div>
 </div>
 {% endblock %}
 
+
 {% block postloadjs %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.remove-from-wishlist').click(function() {
+            var productId = $(this).data('product-id');
+            var csrfToken = '{{ csrf_token }}';
+            
+            $.ajax({
+                url: '{% url "remove_from_wishlist_ajax" %}',
+                method: 'POST',
+                data: {
+                    'product_id': productId,
+                    'csrfmiddlewaretoken': csrfToken
+                },
+                success: function(response) {
+                    if (response.success) {
+                        $('#wishlist-item-' + productId).remove();
+                    } else {
+                        alert('An error occurred while removing the product from the wishlist.');
+                    }
+                }
+            });
+        });
+    });
+</script>
 {% endblock %}

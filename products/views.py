@@ -8,6 +8,9 @@ from .models import (Product, Category, Wishlist, Testimonial,
                      ContactRequest)
 from .forms import ProductForm, ContactForm, TestimonialForm
 from profiles.models import ProductReview
+from django.http import JsonResponse
+from django.views.decorators.http import require_POST
+
 
 
 def all_products(request):
@@ -179,6 +182,18 @@ def view_wishlist(request):
 
 
 @login_required
+@require_POST
+def remove_from_wishlist_ajax(request):
+    product_id = request.POST.get('product_id')
+    try:
+        product = Product.objects.get(id=product_id)
+        Wishlist.objects.filter(user=request.user, product=product).delete()
+        return JsonResponse({'success': True})
+    except Product.DoesNotExist:
+        return JsonResponse({'success': False, 'error': 'Product not found.'})
+
+
+@login_required
 def submit_testimonial(request):
     """Submit a testimonial."""
     if request.method == "POST":
@@ -194,8 +209,7 @@ def submit_testimonial(request):
             return redirect('home')
         else:
             messages.error(
-                request, "Failed to submit testimonial."
-                         " Please correct the errors below."
+                request, "The text must be at least 10 characters"
             )
     else:
         form = TestimonialForm()
