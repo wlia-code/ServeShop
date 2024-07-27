@@ -1,6 +1,12 @@
 from django.urls import path
 from . import views
+"""
+The project structure and some of the
+ backend code were adapted from the Code Institute's
+ "Boutique Ado" walk-through project.
+(https://codeinstitute.net)
 
+"""
 urlpatterns = [
     path('', views.view_bag, name='view_bag'),
     path('add/<item_id>/', views.add_to_bag, name='add_to_bag'),

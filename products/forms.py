@@ -41,7 +41,6 @@ class ContactForm(forms.Form):
     subject = forms.CharField(max_length=100)
     message = forms.CharField(widget=forms.Textarea)
 
-
     def send_email(self):
         """Send the form data via email."""
         try:
@@ -82,4 +81,3 @@ class TestimonialForm(forms.ModelForm):
         if len(text) < 10:
             raise ValidationError('The text must be at least 10 characters.')
         return text
-

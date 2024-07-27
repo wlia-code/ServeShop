@@ -3,6 +3,15 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 
 
+"""
+The project structure and some of the
+backend code were adapted from the Code Institute's
+"Boutique Ado" walk-through project.
+(https://codeinstitute.net)
+
+"""
+
+
 class Category(models.Model):
     """Category model to classify products."""
     class Meta:
@@ -41,7 +50,7 @@ class Product(models.Model):
 
 class Wishlist(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    product = models.ForeignKey(Product, on_delete=models.CASCADE, null=True, blank=True)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, null=True, blank=True)  # noqa
     added_at = models.DateTimeField(default=timezone.now)
 
     class Meta:
@@ -56,7 +65,7 @@ class Testimonial(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     text = models.TextField()
     review = models.CharField(max_length=255, blank=True, null=True)
-    rating = models.PositiveSmallIntegerField(choices=[(i, str(i)) for i in range(1, 6)], default=5)
+    rating = models.PositiveSmallIntegerField(choices=[(i, str(i)) for i in range(1, 6)], default=5)  # noqa
     image = models.ImageField(upload_to='testimonials/', blank=True, null=True)
     approved = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)

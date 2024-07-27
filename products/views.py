@@ -1,16 +1,24 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User  # noqa
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
-from .models import (Product, Category, Wishlist, Testimonial,
-                     ContactRequest)
-from .forms import ProductForm, ContactForm, TestimonialForm
-from profiles.models import ProductReview
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
 
+from .models import (
+    Product, Category, Wishlist, Testimonial, ContactRequest
+)
+from .forms import ProductForm, ContactForm, TestimonialForm
+from profiles.models import ProductReview
+
+"""
+The project structure and some of the
+backend code were adapted from the Code Institute's
+"Boutique Ado" walk-through project.
+(https://codeinstitute.net)
+"""
 
 
 def all_products(request):
@@ -68,9 +76,12 @@ def all_products(request):
 
 
 def product_detail(request, product_id):
+    """View to show individual product details."""
     product = get_object_or_404(Product, id=product_id)
-    reviews = ProductReview.objects.filter(product=product, approved=True).order_by('-created_at')
-    
+    reviews = ProductReview.objects.filter(
+        product=product, approved=True
+    ).order_by('-created_at')
+
     context = {
         'product': product,
         'reviews': reviews
@@ -79,14 +90,18 @@ def product_detail(request, product_id):
 
 
 def all_reviews(request, product_id):
+    """View to show all reviews for a specific product."""
     product = get_object_or_404(Product, id=product_id)
-    reviews = ProductReview.objects.filter(product=product, approved=True).order_by('-created_at')
-    
+    reviews = ProductReview.objects.filter(
+        product=product, approved=True
+    ).order_by('-created_at')
+
     context = {
         'product': product,
         'reviews': reviews
     }
     return render(request, 'products/all_reviews.html', context)
+
 
 @login_required
 def add_product(request):
@@ -162,15 +177,19 @@ def delete_product(request, product_id):
 
 @login_required
 def add_to_wishlist(request, product_id):
+    """Add a product to the user's wishlist."""
     product = get_object_or_404(Product, id=product_id)
-    wishlist, created = Wishlist.objects.get_or_create(user=request.user, product=product)
-    
+    wishlist, created = Wishlist.objects.get_or_create(
+        user=request.user, product=product
+    )
+
     if created:
         messages.success(request, f'Added {product.name} to your wishlist.')
     else:
         messages.info(request, f'{product.name} is already in your wishlist.')
-    
+
     return redirect('product_detail', product_id=product.id)
+
 
 @login_required
 def view_wishlist(request):
@@ -184,6 +203,7 @@ def view_wishlist(request):
 @login_required
 @require_POST
 def remove_from_wishlist_ajax(request):
+    """Remove a product from the user's wishlist via AJAX."""
     product_id = request.POST.get('product_id')
     try:
         product = Product.objects.get(id=product_id)
@@ -214,7 +234,6 @@ def submit_testimonial(request):
     else:
         form = TestimonialForm()
     return render(request, "products/submit_testimonial.html", {"form": form})
-
 
 
 def submit_contact_request(request):
