@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /accounts
+Disallow: /bag
+Sitemap: https://gn-shop-e18f4dd2529c.herokuapp.com/Sitemap.xml
