@@ -17,7 +17,7 @@
     <!-- Featured Products Section -->
     <section aria-labelledby="featured-products-heading">
         <div class="text-center text-warning pt-4 shadow-custom">
-            <h2 id="featured-products-heading" class="font-weight-bold text-white">Our Featured Products</h2>
+            <h2 id="customer-testimonials-heading" class="font-weight-bold text-white">Our Featured Products</h2>
         </div>
         <div class="container">
             <div class="row" id="product-container">
@@ -71,7 +71,6 @@
                             {% if testimonial.review %}
                             <p class="font-italic">{{ testimonial.review|truncatechars:100 }}</p>
                             {% endif %}
-                            <a href="{% url 'testimonials' %}" class="btn bg-dark text-white" aria-label="Read more reviews from customers">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -87,5 +86,5 @@
 
 <!-- Additional JavaScript Section -->
 {% block extra_js %}
-{% include 'home/extra_js.html' %}
+{% include 'home/extra_js.html'%}
 {% endblock %}
