@@ -32,7 +32,7 @@
     <!-- Cookie Consent Banner -->
     <script src="{% static 'js/cookieConsent.js' %}"></script>
     <!-- Mailchimp Script -->
-    <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/5b20efc3e05e515c9bbcc4f50/8f3c2be2d188d0329bc27710b.js");</script>
+    <!-- <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/5b20efc3e05e515c9bbcc4f50/8f3c2be2d188d0329bc27710b.js");</script> -->
     <!-- Stripe -->
     <script src="https://js.stripe.com/v3/"></script>
     {% block extra_js %}{% endblock %}
@@ -229,7 +229,7 @@
             $('.toast').toast('show');
         });
 
-        (function ($) {
+        /*(function ($) {
             window.fnames = new Array();
             window.ftypes = new Array();
             fnames[0] = 'EMAIL';
@@ -244,7 +244,7 @@
             ftypes[4] = 'phone';
             fnames[5] = 'BIRTHDAY';
             ftypes[5] = 'birthday';
-        }(jQuery)); 
+        }(jQuery));*/
     </script>
     {% endblock %}
 </body>
