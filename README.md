@@ -4,7 +4,7 @@
 
 ![GN-SHOP Screenshot](media/readme_media/responsive.png)
 
-- [Live Site](https://gn-shop.herokuapp.com/)
+- [Live Site](https://gn-shop-e18f4dd2529c.herokuapp.com/)
 - [GitHub Repo](https://github.com/wlia-code/ServeShop)
 
 ## Table of Contents
@@ -315,11 +315,11 @@ The integration of these technologies underpins the operational excellence of GN
 
 - Codeinstitute Python Linter
   - No errors were returned when passing through codeinstitute Python Linter [CI Python Linter](https://pep8ci.herokuapp.com/)
-  - Python Linter results: ![Python Linter Test Image](media/readme_media/flake8_errors free.png)
+  - Python Linter results: ![Python Linter Test Image](media/readme_media/flake8_errors_free.png)
 
 - JAVASCRIPT
   - No errors were returned when passing through the official [jshint](https://jshint.com/)
-  - JavaScript validation results: ![JavaScript Test Image](https://github.com/wlia-code/ServeShop/blob/main/path_to_javascript_test_image.png)
+  - JavaScript validation results: ![JavaScript Test Image](media/readme_media/js_test.png)
 
 - HTML
   - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/#textarea)
@@ -327,7 +327,7 @@ The integration of these technologies underpins the operational excellence of GN
 
 - CSS
   - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator)
-  - CSS validation results: ![CSS Test Image](/workspace/ServeShop/media/readme_media/css_test.png)
+  - CSS validation results: ![CSS Test Image](media/readme_media/css_test.png)
 
 [Back to Top](#Table-of-Contents)
 
