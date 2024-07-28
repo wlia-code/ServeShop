@@ -31,3 +31,4 @@ urlpatterns = [
 
 """ Error Handler 404 - Page Not Found """
 handler404 = 'serveshop.views.handler404'  # noqa: F811
+handler500 = 'serveshop.views.handler500'  # noqa: F811
