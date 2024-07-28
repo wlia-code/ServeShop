@@ -2,15 +2,10 @@
 
 **GN-SHOP: A comprehensive e-commerce platform for a seamless shopping experience.**
 
-![GN-SHOP Screenshot](media/readme_media/GN-SHOP_screenshot.png)
+![GN-SHOP Screenshot](media/readme_media/responsive.png)
 
 - [Live Site](https://gn-shop.herokuapp.com/)
 - [GitHub Repo](https://github.com/wlia-code/ServeShop)
-
-
-## Table of Contents
-<details>
-<summary>Table of Contents</summary>
 
 ## Table of Contents
 - [Project Description](#project-description)
@@ -30,25 +25,14 @@
   - [Database Choice](#database-choice)
   - [Data Models](#data-models)
 - [Technologies Used](#technologies-used)
-  - [Languages](#languages)
-  - [Frameworks and Libraries](#frameworks-and-libraries)
-  - [Tools](#tools)
 - [Testing](#testing)
 - [Installation & Usage](#installation--usage)
 - [Deployment](#deployment)
-  - [Local Deployment](#local-deployment)
-  - [Heroku Deployment](#heroku-deployment)
 - [Credits](#credits)
-  - [Content](#content)
-  - [Media](#media)
-  - [Acknowledgements](#acknowledgements)
-  
-</details>
 
 ## Project Description
 
 **GN-SHOP** is an advanced e-commerce platform designed to provide users with an extensive range of products from various categories such as electronics, fashion, home essentials, and more. This platform facilitates a user-friendly shopping experience with advanced functionalities like product reviews, wishlists, and comprehensive order management.
-
 
 ## UX
 
@@ -58,71 +42,60 @@ The primary goal of GN-SHOP is to make online shopping a hassle-free and enjoyab
 
 ### Target Audience
 
-- GN-SHOP
- serves a diverse clientele, perfect for anyone eager to simplify their shopping experience.
-Our users range from tech enthusiasts seeking the latest gadgets, to fashion lovers looking for trendy apparel,
-and busy professionals who need a quick and reliable service.
-We also cater to home decorators and bargain hunters,
-all looking for quality and convenience in one place.
+- GN-SHOP serves a diverse clientele, perfect for anyone eager to simplify their shopping experience.
+- Our users range from tech enthusiasts seeking the latest gadgets, to fashion lovers looking for trendy apparel,
+  and busy professionals who need a quick and reliable service.
+- We also cater to home decorators and bargain hunters,
+  all looking for quality and convenience in one place.
 
 ### User Stories
 
 Here are the user stories that guided the development of GN-SHOP:
 
 <details>
-
 <summary>Click to see detailed User Stories</summary>
-GN-SHOP is designed to cater to both casual shoppers and administrative users, ensuring a comprehensive and user-friendly shopping experience. Here's a brief overview of the key user interactions:
 
 - **Account Management**: Users can register, manage their profiles, and securely login or logout. 
-  - New users receive email verification for security.
 - **Shopping Experience**: Users can browse products, add items to their shopping cart, adjust quantities, and sort or search for specific products easily.
 - **Product Interaction**: After purchase, users can leave reviews, enhancing the community-driven shopping experience.
 - **Order Handling**: Shoppers can view their past orders and track current orders with ease.
 - **Customer Engagement**: Users can contact GN-SHOP through a dedicated form, subscribe to newsletters for updates, and submit testimonials.
 - **Administrative Functions**: Admins can manage products, orders, and user reviews, ensuring the site remains up-to-date and accurate.
 
-For a full detailed list of all user stories, [read the complete user stories here](https://github.com/users/wlia-code/projects/5/views/1).
-
 </details>
+
+[Back to Top](#Table-of-Contents)
 
 ## Features
 
 <details>
 <summary>Click to see Features</summary>
 
-
 ### Existing Features
 
 - **Product Management** *(adapted from Code Institute's Boutique Ado)*: Allows admins to add, edit, or delete products.
-
 - **User Authentication System** *(adapted from Code Institute's Boutique Ado)*: Supports user registration, login, logout, and profile management.
-
-- **Order Management**:  *(adapted from Code Institute's Boutique Ado)*Enables users to view and manage their past orders and order details.
-
+- **Order Management**: Enables users to view and manage their past orders and order details.
 - **Search Functionality** *(adapted from Code Institute's Boutique Ado)*: Features a search bar for finding products by name or description.
-
-- **User Profile** *(adapted from Code Institute's Boutique Ado)*.:  Manage and update personal information and settings 
-
+- **User Profile**: Manage and update personal information and settings 
 - **My Orders**: Users can track their order history and manage their purchases
+- **Contact Us Form**: Provides a simple interface for users to submit inquiries or feedback, enhancing communication and user engagement.
+- **Testimonials**: Allows customers to share their experiences, helping others make informed decisions. This feature is accessible only after a customer has logged in
+- **Newsletter Signup**: Integrated in the footer on every page, this feature uses Mailchimp to manage subscriptions, offering promotions and updates via email.
+- **Product Reviews**: Post-purchase, customers can leave product ratings and reviews, aiding others in their shopping decisions and providing the shop with valuable feedback.
 
-- **Contact Us Form:** Provides a simple interface for users to submit inquiries or feedback, enhancing communication and user engagement.
-
-- **Testimonials:** Allows customers to share their experiences, helping others make informed decisions. Testimonials are moderated to ensure quality. This feature is accessible only after a customer has login
-
-- **Newsletter Signup:** Integrated in the footer on every page, this feature uses Mailchimp to manage subscriptions, offering promotions and updates via email.
-
-- **Product Reviews:** Post-purchase, customers can leave product ratings and reviews, aiding others in their shopping decisions and providing the shop with valuable feedback.This feature is accessible only after a customer has completed a purchase, ensuring that reviews are genuine and based on real user experience
-
-These features collectively enhance the GN-SHOP user experience, aiming to exceed customer expectations and foster community engagement.
 ### Features Left to Implement
 
 - **Product Recommendations**: Suggest products to users based on their browsing history.
 
+[Back to Top](#Table-of-Contents)
+
 </details>
 
-
 ## E-commerce Business Model
+
+<details>
+<summary>E-commerce Business Model</summary>
 
 GN-SHOP operates on a direct-to-consumer (DTC) e-commerce business model, where we provide a wide range of products directly to customers through our online platform. Our business model focuses on:
 
@@ -137,24 +110,25 @@ GN-SHOP operates on a direct-to-consumer (DTC) e-commerce business model, where 
 
 We maintain an active Facebook Business Page to engage with our community, share updates, and promote products. Our Facebook page is a hub for the latest news, promotions, and customer interactions. Follow us on Facebook to stay updated with our latest offers and product launches.
 
-- **[Facebook Business Page](https://github.com/wlia-code/ServeShop/blob/main/sitemap.xml)**
+- **[Facebook Business Page](https://www.facebook.com/people/Gn-SHOP/61563466650456/)**
 
 ## Newsletter Signup
 
-![Newsletter Signup](media/readme_media/newsletter_signup.png)
+![Newsletter Signup](media/readme_media/footer_sign_news.png)
+![Newsletter PopUp](media/readme_media/news_sign.png)
 
 Stay informed about the latest trends, new arrivals, and exclusive offers by subscribing to our newsletter. Our newsletter provides valuable insights, special promotions, and early access to sales. Join our mailing list to never miss an update.
 
 - **[Subscribe to Newsletter](https://gn-shop-e18f4dd2529c.herokuapp.com/)**
 
-By leveraging these platforms, we aim to create a strong connection with the customers and provide them with the best shopping experience possible.
+[Back to Top](#Table-of-Contents)
 
-
+</details>
 
 ## SEO Strategy
 
 <details>
-<summary> Click To See SEO Strategy</summary>
+<summary>Click To See SEO Strategy</summary>
 
 In our SEO strategy for GN-SHOP, we focused on enhancing the visibility of our e-commerce platform in search engines. We implemented a series of optimizations including keyword selection, meta descriptions, and content integration to improve our search engine rankings.
 
@@ -192,28 +166,22 @@ We configured the `robots.txt` file to manage which pages are accessible to sear
 
 - **[robots.txt file](https://github.com/wlia-code/ServeShop/blob/main/robots.txt)** has a link for navigation.
 
-[Back to Top](#Table-of-Contents
+[Back to Top](#Table-of-Contents)
 
 </details>
 
-### Visual Overview
+## Visual Overview
 
 <details>
-
 <summary>Click to see The Visual Overview</summary>
-
-
 
 [Back to Top](#Table-of-Contents)
 
 </details>
 
-
- 
-### Information Architecture
+## Information Architecture
 
 <details>
-
 <summary>Information Architecture</summary>
 
 #### Database Choice
@@ -257,42 +225,113 @@ We configured the `robots.txt` file to manage which pages are accessible to sear
 - Manages queries submitted via the "Contact Us" form.
 - Attributes include: `name`, `email`, `subject`, `message`.
 
+[Back to Top](#Table-of-Contents)
+
 </details>
 
+## Built With
+
+<details>
+
+<summary>Built With</summary>
+
+**Core Technologies:**
+
+* **Django:** A high-level Python web framework that orchestrates our backend logic and infrastructure.
+* **Python:** Powers our backend services with its readability and powerful web development capabilities.
+* **HTML5:** Structures our web pages ensuring semantic markup and standards compliance.
+* **CSS3:** Provides styling to enhance the visual presentation of the website.
+* **JavaScript:** Implements interactive and dynamic elements to enhance user engagement.
+
+**Frameworks and Libraries:**
+
+* **Django Allauth:** Manages comprehensive user authentication, including registration, login, and account management, ensuring a secure user experience.
+* **Django Crispy Forms:** Utilized to render forms in a way that is bootstrap-friendly and maintains the design consistency throughout the site.
+* **Whitenoise:** Efficiently serves static files in production environments, reducing server load and increasing content delivery speed.
+* **Bootstrap 5:** Ensures the site is responsive and accessible across all devices with its grid system and pre-styled components.
+* **Font Awesome:** Enhances user interface design with a wide array of icons.
+
+**Tools and Services:**
+
+* **AWS S3:** Manages static and media file storage and delivery in production, ensuring scalability and reliability.
+* **Heroku:** Provides robust hosting services, simplifying application deployment and management.
+* **Git:** Offers version control, facilitating effective tracking of code changes and collaboration.
+* **GitHub:** Hosts the project repository, enabling version control and access for collaborators.
+* **PostgreSQL:** Delivers powerful database management capabilities in production, suitable for handling complex queries and large volumes of data.
+* **Cloudinary:** Manages image storage and manipulation, optimizing performance and user experience.
+
+The integration of these technologies underpins the operational excellence of GN-SHOP, catering to our B2C audience with a seamless e-commerce experience.
+
 [Back to Top](#Table-of-Contents)
 
-### Data Schema Visual Representation
-
-Below is a visual representation of the database schema, illustrating how the various entities within the GN-SHOP application interact. This schema provides a clear map for database interactions and maintenance.
-
-## Technologies Used
-
-### Languages
-
-- HTML5
-- CSS3
-- JavaScript
-- Python
-
-### Frameworks and Libraries
-
-- Django
-- Bootstrap
-- jQuery
-- Font Awesome
-
-### Tools
-
-- Git
-- Heroku
-- PostgreSQL
-- AWS S3
-
-[Back to Top](#Table-of-Contents)
+</details>
 
 ## Testing
 
-Testing information goes here.
+<details>
+
+<summary>Testing</summary>
+
+### Python Tests
+
+#### Checkout Tests
+
+- Tests related to the checkout process can be found under the `checkout` directory:
+  - Stripe webhook handling: [test_StripeWH_Handler.py](https://github.com/wlia-code/ServeShop/blob/main/checkout/test_StripeWH_Handler.py)
+  - Checkout model tests: [test_models_checkout.py](https://github.com/wlia-code/ServeShop/blob/main/checkout/test_models_checkout.py)
+  - Checkout view tests: [test_views_checkout.py](https://github.com/wlia-code/ServeShop/blob/main/checkout/test_views_checkout.py)
+  - Checkout webhook tests: [test_webhook.py](https://github.com/wlia-code/ServeShop/blob/main/checkout/test_webhook.py)
+
+#### Home Tests
+
+- Tests for the home page views are located in the `home` directory:
+  - Home view tests: [test_views_home.py](https://github.com/wlia-code/ServeShop/blob/main/home/test_views_home.py)
+
+#### Product Tests
+
+- Tests for product functionalities are located in the `products` directory:
+  - Product tests: [test_product.py](https://github.com/wlia-code/ServeShop/blob/main/products/test_product.py)
+
+#### Profiles Tests
+
+- Tests for user profile models and views are found in the `profiles` directory:
+  - Profile model tests: [test_models.py](https://github.com/wlia-code/ServeShop/blob/main/profiles/test_models.py)
+  - Profile view tests: [test_views.py](https://github.com/wlia-code/ServeShop/blob/main/profiles/test_views.py)
+
+### GN-shop was tested on the following browsers:
+
+  - Google Chrome
+  - Mozilla Firefox
+  - Microsoft Edge
+  - Apple Safari
+
+### Validator Testing:
+
+- Accessibility Testing
+
+  - No errors were returned when passing through [WAVE Evaluation Tool](https://wave.webaim.org/)
+  - Accessibility test results: ![Accessibility Test Image](media/readme_media/wave.png)
+  - lighthouse testing tool ![Accessibility Test Image](media/readme_media/lighthouse.png)
+
+- Codeinstitute Python Linter
+  - No errors were returned when passing through codeinstitute Python Linter [CI Python Linter](https://pep8ci.herokuapp.com/)
+  - Python Linter results: ![Python Linter Test Image](media/readme_media/flake8_errors free.png)
+
+- JAVASCRIPT
+  - No errors were returned when passing through the official [jshint](https://jshint.com/)
+  - JavaScript validation results: ![JavaScript Test Image](https://github.com/wlia-code/ServeShop/blob/main/path_to_javascript_test_image.png)
+
+- HTML
+  - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/#textarea)
+  - HTML validation results: ![HTML Test Image](media/readme_media/html_test.png)
+
+- CSS
+  - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator)
+  - CSS validation results: ![CSS Test Image](/workspace/ServeShop/media/readme_media/css_test.png)
+
+[Back to Top](#Table-of-Contents)
+
+</details>
 
 ## Bugs Found and Fixed
 
@@ -367,7 +406,6 @@ Ensure that you have Python (version 3.7 or newer) installed on your system. If 
 
 [Back to Top](#Table-of-Contents)
 
-
 ## Deployment
 
 ### ElephantSQL
@@ -377,7 +415,6 @@ Ensure that you have Python (version 3.7 or newer) installed on your system. If 
 3. After creation, from the dashboard, click on the instance name and copy the _Database URL_ for Heroku configuration.
 
 ### AWS 3
-
 
 1. **Log into your AWS Management Console.**
 2. **Navigate to the S3 service to create a new bucket.**
@@ -456,7 +493,7 @@ GN-SHOP was developed using a variety of tools to ensure high-quality developmen
 - [Bootstrap5](https://getbootstrap.com/) and [Google Fonts](https://fonts.google.com/) for styling.
 - [Code Institute Pylint](https://pep8ci.herokuapp.com/), [W3C HTML Validator](https://validator.w3.org/#validate_by_uri+with_options), and [Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_uri) for code validation.
 - [Chrome Dev Tools](https://developer.chrome.com/docs/devtools/), [W.A.V.E.](https://wave.webaim.org/), and [Chrome LightHouse extension](https://developer.chrome.com/docs/lighthouse/overview/) for testing and optimization.
-- [AWS 3](https://signin.aws.amazon.com/signup?request_type=register) for media management.
+- [AWS 3](https://signin.aws.amazon.com/signup) for media management.
 - [Cloudinary](https://cloudinary.com/) for media management.
 - [FACEBOOK](https://www.facebook.com/) for WEB MARKETING.
 

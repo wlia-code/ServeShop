@@ -1,3 +1,5 @@
+// script from https://www.gdprprivacynotice.com/
+
 document.addEventListener('DOMContentLoaded', function () {
     if (!getCookie('cookieConsent')) {
         document.getElementById('cookieConsent').style.display = 'block';
