@@ -80,9 +80,21 @@ Here are the user stories that guided the development of GN-SHOP:
 - **User Profile**: Manage and update personal information and settings 
 - **My Orders**: Users can track their order history and manage their purchases
 - **Contact Us Form**: Provides a simple interface for users to submit inquiries or feedback, enhancing communication and user engagement.
-- **Testimonials**: Allows customers to share their experiences, helping others make informed decisions. This feature is accessible only after a customer has logged in
 - **Newsletter Signup**: Integrated in the footer on every page, this feature uses Mailchimp to manage subscriptions, offering promotions and updates via email.
+- **Testimonials**: Allows customers to share their experiences, helping others make informed decisions. This feature is accessible only after a customer has logged in
 - **Product Reviews**: Post-purchase, customers can leave product ratings and reviews, aiding others in their shopping decisions and providing the shop with valuable feedback.
+
+### Testimonials and Reviews
+- **Testimonials**: Allows customers to share their experiences on the GN-SHOP platform. Testimonials require user login for submission and undergo an approval process by the admin. Once approved, they are displayed on the homepage to assist other customers in making informed decisions
+
+- **Product Reviews**: After purchasing, customers can leave reviews on the products they've bought. These reviews include ratings and text feedback, which are visible on the product detail pages once approved by an administrator. This process ensures that all feedback is genuine and helpful to others
+
+### Admin Panel Features
+- **Comprehensive Management Tools**: The admin panel of GN-SHOP is equipped with extensive CRUD capabilities, allowing admins to manage the entire lifecycle of products, testimonials, and reviews effectively. This includes the ability to:
+  - **Create**: Add new products or testimonials as needed.
+  - **Read**: View all entries and data submitted by users.
+  - **Update**: Modify existing product details or approve testimonials and reviews to ensure they meet community standards.
+  - **Delete**: Remove outdated or inappropriate content to maintain the site’s integrity and relevance
 
 ### Features Left to Implement
 
@@ -174,6 +186,50 @@ We configured the `robots.txt` file to manage which pages are accessible to sear
 
 <details>
 <summary>Click to see The Visual Overview</summary>
+
+### Header
+- **Logo and Navigation**: The header prominently features the GN-SHOP logo, linked to the homepage for easy navigation.
+  ![Header Image](media/readme_media/navbar_desktop.png)
+- **Navigation Menu**: Links to product categories, user account, wishlist, and shopping cart, facilitating easy access across the site.
+  ![Navigation Menu Image](media/readme_media/navbar_menu.png)
+
+### Home Page
+- **Hero Section**: A large, eye-catching slider that highlights current promotions and popular products.
+  ![Hero Section Image](media/readme_media/hero_section.png)
+- **Customer Testimonials**: A dedicated section where customers share their experiences and feedback about the products and services offered by GN-SHOP. This feature helps build trust and community engagement by displaying real customer reviews.
+  ![Testimonials Image](media/readme_media/testimonials.png)
+
+### Product Details
+- **Product Information**: Detailed view of products including images, descriptions, prices, and available sizes or colors.
+  ![Product Details Image](media/readme_media/product_information.png)
+- **Add to Cart**: Button for adding items to the shopping cart.
+  ![Add to Cart Image](media/readme_media/add_tobag.png)
+
+### User Interaction Features
+- **Wishlist**: Allows users to save products to their account for later purchase.
+  ![Wishlist Image](media/readme_media/wishlist.png)
+- **Customer Reviews**: Section where customers can leave feedback and rate products.
+  ![Customer Reviews Image](media/readme_media/add_reviews.png)
+
+### Footer
+- **Footer**
+  ![Contact Information Image](media/readme_media/footer.png)
+- **Newsletter Subscription**: Users can sign up for newsletters to receive updates and offers.
+  ![Newsletter Subscription Image](media/readme_media/news_sign.png)
+- **Social Media Links**: Quick access links to social media platforms.
+  ![Social Media Links Image](media/readme_media/footer11.png)
+
+### Additional Functionalities
+- **Contact Us Page**: Contains a form for direct inquiries, enhancing user engagement and support.
+  ![Contact Us Form Image](media/readme_media/contact_us.png)
+- **Account Management**: Users can manage their profiles, view order history, and update billing and shipping information.
+  ![Account Management Image](media/readme_media/mange_profile.png)
+
+### Checkout and Payment
+- **Shopping Cart**: Review of items in the cart with options to update quantities or remove products.
+  ![Shopping Cart Image](media/readme_media/bag.png)
+- **Checkout Page**: Secure checkout process with step-by-step guidance to complete purchases.
+  ![Checkout Page Image](media/readme_media/checkout.png)
 
 [Back to Top](#Table-of-Contents)
 
