@@ -60,6 +60,8 @@ Here are the user stories that guided the development of GN-SHOP:
 - **Customer Engagement**: Users can contact GN-SHOP through a dedicated form, subscribe to newsletters for updates, and submit testimonials.
 - **Administrative Functions**: Admins can manage products, orders, and user reviews, ensuring the site remains up-to-date and accurate.
 
+- [Click to see the full version of User Stories On github](https://github.com/users/wlia-code/projects/5)
+
 - </details>
 
 [Back to Top](#Table-of-Contents)
