@@ -38,22 +38,20 @@
 
 ### Goals
 
-The primary goal of GN-SHOP is to make online shopping a hassle-free and enjoyable experience for users by providing them with a reliable, efficient, and engaging platform.
+The primary goal of the GN-SHOP project is to demonstrate a robust and fully-functional online shopping platform built with Django. It showcases seamless integration of product listings, user authentication, and advanced features like wishlists and testimonials.
 
 ### Target Audience
 
-- GN-SHOP serves a diverse clientele, perfect for anyone eager to simplify their shopping experience.
-- Our users range from tech enthusiasts seeking the latest gadgets, to fashion lovers looking for trendy apparel,
-  and busy professionals who need a quick and reliable service.
-- We also cater to home decorators and bargain hunters,
-  all looking for quality and convenience in one place.
+- B2C (Business to Consumer) model,  the target audience is individual consumers who are looking for a convenient and varied     
+  shopping experience from the comfort of their own homes or on the go. The platform is specifically designed to cater to the needs and preferences of end-users rather than businesses or wholesale buyers, focusing on direct sales through an accessible online store interface. This approach makes the platform suitable for a wide range of consumers, from casual shoppers to those seeking specific items for personal use.
+
 
 ### User Stories
 
 Here are the user stories that guided the development of GN-SHOP:
 
 <details>
-<summary>Click to see detailed User Stories</summary>
+<summary><h3>Click to see detailed User Stories</h3></summary>
 
 - **Account Management**: Users can register, manage their profiles, and securely login or logout. 
 - **Shopping Experience**: Users can browse products, add items to their shopping cart, adjust quantities, and sort or search for specific products easily.
@@ -62,14 +60,14 @@ Here are the user stories that guided the development of GN-SHOP:
 - **Customer Engagement**: Users can contact GN-SHOP through a dedicated form, subscribe to newsletters for updates, and submit testimonials.
 - **Administrative Functions**: Admins can manage products, orders, and user reviews, ensuring the site remains up-to-date and accurate.
 
-</details>
+- </details>
 
 [Back to Top](#Table-of-Contents)
 
 ## Features
 
 <details>
-<summary>Click to see Features</summary>
+<summary><h3>Click to see Features</h3></summary>
 
 ### Existing Features
 
@@ -107,7 +105,7 @@ Here are the user stories that guided the development of GN-SHOP:
 ## E-commerce Business Model
 
 <details>
-<summary>E-commerce Business Model</summary>
+<summary><h3>E-commerce Business Model</h3></summary>
 
 GN-SHOP operates on a direct-to-consumer (DTC) e-commerce business model, where we provide a wide range of products directly to customers through our online platform. Our business model focuses on:
 
@@ -140,7 +138,7 @@ Stay informed about the latest trends, new arrivals, and exclusive offers by sub
 ## SEO Strategy
 
 <details>
-<summary>Click To See SEO Strategy</summary>
+<summary><h3>Click To See SEO Strategy</h3></summary>
 
 In our SEO strategy for GN-SHOP, we focused on enhancing the visibility of our e-commerce platform in search engines. We implemented a series of optimizations including keyword selection, meta descriptions, and content integration to improve our search engine rankings.
 
@@ -185,7 +183,7 @@ We configured the `robots.txt` file to manage which pages are accessible to sear
 ## Visual Overview
 
 <details>
-<summary>Click to see The Visual Overview</summary>
+<summary><h3>Click to see The Visual Overview</h3></summary>
 
 ### Header
 - **Logo and Navigation**: The header prominently features the GN-SHOP logo, linked to the homepage for easy navigation.
@@ -238,7 +236,7 @@ We configured the `robots.txt` file to manage which pages are accessible to sear
 ## Information Architecture
 
 <details>
-<summary>Information Architecture</summary>
+<summary><h3>Information Architecture</h3></summary>
 
 #### Database Choice
 - **Development**: SQLite3 (default database provided by Django)
@@ -289,7 +287,7 @@ We configured the `robots.txt` file to manage which pages are accessible to sear
 
 <details>
 
-<summary>Built With</summary>
+<summary><h3>Built With</h3></summary>
 
 **Core Technologies:**
 
@@ -326,7 +324,7 @@ The integration of these technologies underpins the operational excellence of GN
 
 <details>
 
-<summary>Testing</summary>
+<summary><h3>Testing</h3></summary>
 
 ### Python Tests
 
