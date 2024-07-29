@@ -83,7 +83,7 @@ Here are the user stories that guided the development of GN-SHOP:
 - **Newsletter Signup**: Integrated in the footer on every page, this feature uses Mailchimp to manage subscriptions, offering promotions and updates via email.
 - **Testimonials**: Allows customers to share their experiences, helping others make informed decisions. This feature is accessible only after a customer has logged in
 - **Product Reviews**: Post-purchase, customers can leave product ratings and reviews, aiding others in their shopping decisions and providing the shop with valuable feedback.
-
+-**add to Wishlist**: Users can save products to a wishlist for later purchase.
 ### Testimonials and Reviews
 - **Testimonials**: Allows customers to share their experiences on the GN-SHOP platform. Testimonials require user login for submission and undergo an approval process by the admin. Once approved, they are displayed on the homepage to assist other customers in making informed decisions
 
@@ -97,6 +97,24 @@ Here are the user stories that guided the development of GN-SHOP:
   - **Delete**: Remove outdated or inappropriate content to maintain the site’s integrity and relevance
 
 ### Features Left to Implement
+
+- **Live Chat Support**: Integrate a live chat feature to provide real-time assistance, enhancing customer service capabilities.
+
+- **Multi-Language Support**: Expand market reach by offering the website in multiple languages.
+
+- **Loyalty Program**: Implement a loyalty program to reward repeat customers with discounts and special offers.
+
+- **Gift Card System**: Allow customers to purchase and redeem gift cards, increasing purchasing flexibility.
+
+- **Advanced Analytics for Users**: Provide detailed analytics on user spending habits and preferences through a personalized dashboard.
+
+- **Augmented Reality**: Use AR technology to allow customers to visualize products in their environment before purchasing.
+
+- **Customizable Products**: Enable product customization options such as color choices or personalizations.
+
+- **Social Media Integration**: Facilitate social media logins and enable sharing of products and purchases.
+
+- **Mobile App**: Develop a dedicated mobile app to improve the shopping experience on smartphones and tablets.
 
 - **Product Recommendations**: Suggest products to users based on their browsing history.
 
@@ -120,7 +138,7 @@ GN-SHOP operates on a direct-to-consumer (DTC) e-commerce business model, where 
 
 ![Facebook Business Page](media/readme_media/facebook_page.png)
 
-We maintain an active Facebook Business Page to engage with our community, share updates, and promote products. Our Facebook page is a hub for the latest news, promotions, and customer interactions. Follow us on Facebook to stay updated with our latest offers and product launches.
+We maintain an active Facebook Business Page to engage with our community, share updates, and promote products. Our Facebook page is a hub for the latest news, promotions, and customer interactions. Follow us on Facebook 
 
 - **[Facebook Business Page](https://www.facebook.com/people/Gn-SHOP/61563466650456/)**
 
@@ -129,7 +147,7 @@ We maintain an active Facebook Business Page to engage with our community, share
 ![Newsletter Signup](media/readme_media/footer_sign_news.png)
 ![Newsletter PopUp](media/readme_media/news_sign.png)
 
-Stay informed about the latest trends, new arrivals, and exclusive offers by subscribing to our newsletter. Our newsletter provides valuable insights, special promotions, and early access to sales. Join our mailing list to never miss an update.
+Stay informed about the latest trends, new arrivals, and exclusive offers by subscribing to our newsletter.
 
 - **[Subscribe to Newsletter](https://gn-shop-e18f4dd2529c.herokuapp.com/)**
 
@@ -304,7 +322,7 @@ We configured the `robots.txt` file to manage which pages are accessible to sear
 * **Django Allauth:** Manages comprehensive user authentication, including registration, login, and account management, ensuring a secure user experience.
 * **Django Crispy Forms:** Utilized to render forms in a way that is bootstrap-friendly and maintains the design consistency throughout the site.
 * **Whitenoise:** Efficiently serves static files in production environments, reducing server load and increasing content delivery speed.
-* **Bootstrap 5:** Ensures the site is responsive and accessible across all devices with its grid system and pre-styled components.
+* **Bootstrap 4:** Ensures the site is responsive and accessible across all devices with its grid system and pre-styled components.
 * **Font Awesome:** Enhances user interface design with a wide array of icons.
 
 **Tools and Services:**
