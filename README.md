@@ -445,11 +445,11 @@ Ensure that you have Python (version 3.7 or newer) installed on your system. If 
 ### Setup
 1. Clone the project repository:
    ```bash
-   $ git clone https://github.com/yourusername/motel-meo.git
+   $ git clone https://github.com/wlia-code/ServeShop
 
 2. Navigate into the project directory:
    ```bash
-    $ cd motel-meo
+    $ cd ServeShop
 
 3. Install dependencies:
    ```bash
@@ -571,7 +571,7 @@ GN-SHOP was developed using a variety of tools to ensure high-quality developmen
 - [Cloudinary](https://cloudinary.com/) for media management.
 - [FACEBOOK](https://www.facebook.com/) for WEB MARKETING.
 
-These tools collectively enhance the efficiency, reliability, and scalability of the Motel Meo project.
+These tools collectively enhance the efficiency, reliability, and scalability of the GN-Shop project.
 
 [Back to Top](#Table-of-Contents)
 
@@ -580,7 +580,8 @@ These tools collectively enhance the efficiency, reliability, and scalability of
 I would like to express my gratitude to several key individuals who have supported me throughout the development of GN-SHOP.
 
 ### Mentorship
-- **Victor Miclovich**: thanks to Victor for his invaluable guidance and mentorship.
+- **Victor Miclovich**: thanks to Victor for his invaluable guidance and mentorship for pp4 .
+- **David Bowers**: thanks to David for his invaluable guidance and mentorship for pp1 and pp2 and pp3.
 ### Support
 - **Code Institute Student Care**: A special thank you to the Student Care team at [Code Institute](https://codeinstitute.net).
 
