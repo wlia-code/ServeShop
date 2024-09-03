@@ -21,7 +21,7 @@
 - [Newsletter Signup](#newsletter-signup)
 - [SEO Strategy](#seo-strategy)
 - [Visual Overview](#visual-overview)
-- [Information Architecture](#information-architecture)
+- [ERD](#information-architecture)
   - [Database Choice](#database-choice)
   - [Data Models](#data-models)
 - [Technologies Used](#technologies-used)
@@ -50,8 +50,7 @@ The primary goal of the GN-SHOP project is to demonstrate a robust and fully-fun
 
 Here are the user stories that guided the development of GN-SHOP:
 
-<details>
-<summary><h3>Click to see detailed User Stories</h3></summary>
+
 
 - **Account Management**: Users can register, manage their profiles, and securely login or logout. 
 - **Shopping Experience**: Users can browse products, add items to their shopping cart, adjust quantities, and sort or search for specific products easily.
@@ -62,14 +61,13 @@ Here are the user stories that guided the development of GN-SHOP:
 
 - [Click to see the full version of User Stories On github](https://github.com/users/wlia-code/projects/5)
 
-- </details>
+- 
 
 [Back to Top](#Table-of-Contents)
 
 ## Features
 
-<details>
-<summary><h3>Click to see Features</h3></summary>
+
 
 ### Existing Features
 
@@ -120,12 +118,11 @@ Here are the user stories that guided the development of GN-SHOP:
 
 [Back to Top](#Table-of-Contents)
 
-</details>
+
 
 ## E-commerce Business Model
 
-<details>
-<summary><h3>E-commerce Business Model</h3></summary>
+
 
 GN-SHOP operates on a direct-to-consumer (DTC) e-commerce business model, where we provide a wide range of products directly to customers through our online platform. Our business model focuses on:
 
@@ -153,12 +150,11 @@ Stay informed about the latest trends, new arrivals, and exclusive offers by sub
 
 [Back to Top](#Table-of-Contents)
 
-</details>
+
 
 ## SEO Strategy
 
-<details>
-<summary><h3>Click To See SEO Strategy</h3></summary>
+
 
 In our SEO strategy for GN-SHOP, we focused on enhancing the visibility of our e-commerce platform in search engines. We implemented a series of optimizations including keyword selection, meta descriptions, and content integration to improve our search engine rankings.
 
@@ -198,12 +194,11 @@ We configured the `robots.txt` file to manage which pages are accessible to sear
 
 [Back to Top](#Table-of-Contents)
 
-</details>
+
 
 ## Visual Overview
 
-<details>
-<summary><h3>Click to see The Visual Overview</h3></summary>
+
 
 ### Header
 - **Logo and Navigation**: The header prominently features the GN-SHOP logo, linked to the homepage for easy navigation.
@@ -251,14 +246,9 @@ We configured the `robots.txt` file to manage which pages are accessible to sear
 
 [Back to Top](#Table-of-Contents)
 
-</details>
 
-## Information Architecture
 
-<details>
-<summary><h3>Information Architecture</h3></summary>
-
-#### Database Choice
+#### Entity Relationship Diagram (ERD)
 - **Development**: SQLite3 (default database provided by Django)
 - **Production**: PostgreSQL (provided by Heroku)
 
@@ -301,13 +291,12 @@ We configured the `robots.txt` file to manage which pages are accessible to sear
 
 [Back to Top](#Table-of-Contents)
 
-</details>
+
 
 ## Built With
 
-<details>
 
-<summary><h3>Built With</h3></summary>
+
 
 **Core Technologies:**
 
@@ -338,13 +327,11 @@ The integration of these technologies underpins the operational excellence of GN
 
 [Back to Top](#Table-of-Contents)
 
-</details>
+
 
 ## Testing
 
-<details>
 
-<summary><h3>Testing</h3></summary>
 
 ### Python Tests
 
@@ -405,7 +392,7 @@ The integration of these technologies underpins the operational excellence of GN
 
 [Back to Top](#Table-of-Contents)
 
-</details>
+
 
 ## Bugs Found and Fixed
 
