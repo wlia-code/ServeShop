@@ -21,7 +21,7 @@
 - [Newsletter Signup](#newsletter-signup)
 - [SEO Strategy](#seo-strategy)
 - [Visual Overview](#visual-overview)
-- [Entity Relationship Diagram](ERD](#Entity-Relationship-Diagram-(ERD)
+- [Entity Relationship Diagram ERD](#Entity-Relationship-Diagram-(ERD)
   - [Database Choice](#database-choice)
   - [Data Models](#data-models)
 - [Technologies Used](#technologies-used)
