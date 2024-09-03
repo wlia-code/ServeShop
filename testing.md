@@ -19,7 +19,6 @@ The above test was performed successfully, and Stripe integration is confirmed t
 |---------------------|--------------------------------|--------------------------------------------------------|--------|
 | Logo/Home Link      | Click on Logo at the top of the page | Redirect to the home page                                | PASS   |
 | All Products Link   | Click on the middle nav link    | Opens the Products Page                                 | PASS   |
-| Electronics Link    | Click on the middle nav link    | Opens the category Electronics Page                     | PASS   |
 | Fashion Link        | Click on the middle nav link    | Opens the category Fashion Page                         | PASS   |
 | Accessories Link    | Click on the middle nav link    | Opens the category Accessories Page                     | PASS   |
 | Sale Link           | Click on the middle nav link    | Opens the Sale Page                                     | PASS   |
@@ -79,7 +78,6 @@ The above test was performed successfully, and Stripe integration is confirmed t
 | Delete Item in Basket   | Click 'Delete' button           | Item is removed from the basket                         | PASS   |
 | Update Item in Basket   | Click 'Update' button           | Item quantity is updated in the basket                  | PASS   |
 | Summary total Calculator| Change item quantities         | Total price updates accordingly                         | PASS   |
-| Summary VAT Calculator  | Add items and check VAT         | 20% VAT applied correctly                               | PASS   |
 | Checkout Button         | Click on checkout button        | Redirects to the Stripe checkout page                   | PASS   |
 | Checkout validation     | Incomplete checkout submission  | Checkout does not proceed until all fields are filled   | PASS   |
 | Checkout Success        | Complete checkout successfully  | Redirects to success page with payment confirmation     | PASS   |
