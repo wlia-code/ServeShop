@@ -90,10 +90,11 @@
                             <a href="{% url 'submit_testimonial' %}" class="dropdown-item">Submit Testimonial</a>
                             <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                             <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                            {% else %}
                             <a href="{% url 'submit_contact_request' %}" class="dropdown-item">Contact Us</a>
+                            {% else %}
                             <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
                             <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                            <a href="{% url 'submit_contact_request' %}" class="dropdown-item">Contact Us</a>
                             {% endif %}
                         </div>
                     </li>
@@ -163,7 +164,7 @@
                 <!-- Newsletter Signup -->
                 <div class="col-md-6">
                     <div id="mc_embed_signup">
-                        <form action="https://herokuapp.us22.list-manage.com/subscribe/post?u=5b20efc3e05e515c9bbcc4f50&amp;id=b4d334e758&amp;f_id=00a1d2e1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" aria-label="Sign up for our newsletter">
+                        <form action="https://herokuapp.us22.list-manage.com/subscribe/post?u=5b20efc3e05e515c9bbcc4f50&amp;id=b4d334e758&amp;f_id=00a1d2e1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" aria-label="Sign up for our newsletter">
                             <div id="mc_embed_signup_scroll">
                                 <h2>Sign Up For Newsletter!</h2>
                                 <div class="mc-field-group">
