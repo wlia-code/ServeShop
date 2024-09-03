@@ -125,4 +125,92 @@ The above test was performed successfully, and Stripe integration is confirmed t
 | Trash Icon Button       | Click on Trash Icon Button     | Product is removed from the wishlist                   | PASS   |
 | Card Image              | Click on Image                 | Redirects to the product detail page                    | PASS   |
 
+## Testing
 
+
+
+### Python Tests
+
+#### Checkout Tests
+
+- Tests related to the checkout process can be found under the `checkout` directory:
+  - Stripe webhook handling: [test_StripeWH_Handler.py](https://github.com/wlia-code/ServeShop/blob/main/checkout/test_StripeWH_Handler.py)
+  - Checkout model tests: [test_models_checkout.py](https://github.com/wlia-code/ServeShop/blob/main/checkout/test_models_checkout.py)
+  - Checkout view tests: [test_views_checkout.py](https://github.com/wlia-code/ServeShop/blob/main/checkout/test_views_checkout.py)
+  - Checkout webhook tests: [test_webhook.py](https://github.com/wlia-code/ServeShop/blob/main/checkout/test_webhook.py)
+
+#### Home Tests
+
+- Tests for the home page views are located in the `home` directory:
+  - Home view tests: [test_views_home.py](https://github.com/wlia-code/ServeShop/blob/main/home/test_views_home.py)
+
+#### Product Tests
+
+- Tests for product functionalities are located in the `products` directory:
+  - Product tests: [test_product.py](https://github.com/wlia-code/ServeShop/blob/main/products/test_product.py)
+
+#### Profiles Tests
+
+- Tests for user profile models and views are found in the `profiles` directory:
+  - Profile model tests: [test_models.py](https://github.com/wlia-code/ServeShop/blob/main/profiles/test_models.py)
+  - Profile view tests: [test_views.py](https://github.com/wlia-code/ServeShop/blob/main/profiles/test_views.py)
+
+### GN-shop was tested on the following browsers:
+
+  - Google Chrome
+  - Mozilla Firefox
+  - Microsoft Edge
+  - Apple Safari
+
+### Validator Testing:
+
+- Accessibility Testing
+
+  - No errors were returned when passing through [WAVE Evaluation Tool](https://wave.webaim.org/)
+  - Accessibility test results: ![Accessibility Test Image](media/readme_media/wave.png)
+  - lighthouse testing tool ![Accessibility Test Image](media/readme_media/lighthouse.png)
+
+- Codeinstitute Python Linter
+  - No errors were returned when passing through codeinstitute Python Linter [CI Python Linter](https://pep8ci.herokuapp.com/)
+  - Python Linter results: ![Python Linter Test Image](media/readme_media/flake8_errors_free.png)
+
+- JAVASCRIPT
+  - No errors were returned when passing through the official [jshint](https://jshint.com/)
+  - JavaScript validation results: ![JavaScript Test Image](media/readme_media/js_test.png)
+
+- HTML
+  - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/#textarea)
+  - HTML validation results: ![HTML Test Image](media/readme_media/html_test.png)
+
+- CSS
+  - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator)
+  - CSS validation results: ![CSS Test Image](media/readme_media/css_test.png)
+
+[Back to Top](#Table-of-Contents)
+
+
+
+## Bugs Found and Fixed
+
+### Bug Fixes
+
+#### 1. Checkout Process Errors
+- **Issue**: Users were experiencing errors during the checkout process.
+- **Root Cause**: Stripe API keys were not correctly configured in the production environment.
+- **Solution**: Secured and correctly set the Stripe environment variables in Heroku's config vars.
+- **Outcome**: The checkout process is now seamless, and transactions are processed without errors.
+
+#### 2. Responsive Design Inconsistencies
+- **Issue**: The website was not displaying correctly on various mobile devices.
+- **Root Cause**: CSS media queries were not effectively targeting all screen sizes.
+- **Solution**: Refactored CSS to enhance responsiveness using Bootstrap's grid system and media queries.
+- **Outcome**: Improved user experience across all devices with consistent layout and design.
+
+### Ongoing Monitoring
+
+- **Current Bugs**: Minor styling adjustments are ongoing to ensure compatibility across all browsers.
+- **Monitoring**: Regularly reviewing user feedback and system performance to identify and address any new issues as they arise.
+
+### Conclusion
+
+These bug fixes have significantly improved the stability and performance of GN-SHOP. I am committed to maintaining a high standard of quality and responsiveness in managing any future challenges.
