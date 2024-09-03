@@ -47,18 +47,84 @@ The primary goal of the GN-SHOP project is to demonstrate a robust and fully-fun
   shopping experience from the comfort of their own homes or on the go. The platform is specifically designed to cater to the needs and preferences of end-users rather than businesses or wholesale buyers, focusing on direct sales through an accessible online store interface. This approach makes the platform suitable for a wide range of consumers, from casual shoppers to those seeking specific items for personal use.
 
 
-### User Stories
+## User Stories
 
-Here are the user stories that guided the development of GN-SHOP:
+Below is a comprehensive list of user stories that were considered during the development of the GN Shop project. Each user story is categorized by its functionality and user role for clarity.
 
+### User Registration and Authentication
 
+| **ID** | **User Story**                                                                                                                | **User Role**          | **Priority** |
+|--------|--------------------------------------------------------------------------------------------------------------------------------|------------------------|--------------|
+| #1     | As a new user, I want to register an account, so I can start shopping on GN Shop.                                               | User                   | High         |
+| #2     | As a returning user, I want to log into my account, so I can access my personal shopping data.                                  | User                   | High         |
+| #3     | As a user, I want to recover my password, so I can regain access to my account if I forget it.                                  | User                   | Medium       |
 
-- **Account Management**: Users can register, manage their profiles, and securely login or logout. 
-- **Shopping Experience**: Users can browse products, add items to their shopping cart, adjust quantities, and sort or search for specific products easily.
-- **Product Interaction**: After purchase, users can leave reviews, enhancing the community-driven shopping experience.
-- **Order Handling**: Shoppers can view their past orders and track current orders with ease.
-- **Customer Engagement**: Users can contact GN-SHOP through a dedicated form, subscribe to newsletters for updates, and submit testimonials.
-- **Administrative Functions**: Admins can manage products, orders, and user reviews, ensuring the site remains up-to-date and accurate.
+### Shopping Experience
+
+| **ID** | **User Story**                                                                                                                | **User Role**          | **Priority** |
+|--------|--------------------------------------------------------------------------------------------------------------------------------|------------------------|--------------|
+| #4     | As a user, I want to browse through products, so I can find items I am interested in purchasing.                               | User                   | High         |
+| #5     | As a user, I want to search for specific products, so I can quickly find what I am looking for.                                 | User                   | High         |
+| #6     | As a user, I want to view detailed information about a product, so I can make an informed purchase decision.                    | User                   | High         |
+| #7     | As a user, I want to add products to my cart, so I can purchase them later.                                                     | User                   | High         |
+| #8     | As a user, I want to view the items in my cart, so I can review my selections before purchasing.                                | User                   | High         |
+| #9     | As a user, I want to update the quantity or remove items in my cart, so I can adjust my order.                                  | User                   | Medium       |
+| #10    | As a user, I want to complete the checkout process, so I can purchase the items in my cart.                                     | User                   | High         |
+| #12    | As a user, I want to view my order history, so I can keep track of my past purchases.                                           | User                   | Medium       |
+| #13    | As a user, I want to leave reviews for products I have purchased, so I can share my experience with others.                     | User                   | Low          |
+
+### Payment and Security
+
+| **ID** | **User Story**                                                                                                                | **User Role**          | **Priority** |
+|--------|--------------------------------------------------------------------------------------------------------------------------------|------------------------|--------------|
+| #15    | As a user, I want a secure payment process, so I can safely make transactions online.                                          | User                   | High         |
+
+### Wishlist and Testimonials
+
+| **ID** | **User Story**                                                                                                                | **User Role**          | **Priority** |
+|--------|--------------------------------------------------------------------------------------------------------------------------------|------------------------|--------------|
+| #40    | As a user, I want to add products to a wishlist, so I can save them for later review or purchase.                              | User                   | Medium       |
+| #41    | As a customer, I want to submit testimonials about my overall shopping experience, so I can provide feedback to the store.      | Customer               | Low          |
+
+### Contact and Customer Support
+
+| **ID** | **User Story**                                                                                                                | **User Role**          | **Priority** |
+|--------|--------------------------------------------------------------------------------------------------------------------------------|------------------------|--------------|
+| #42    | As a user, I want to easily contact customer service through a form on the website, so I can make inquiries or report issues.   | User                   | Medium       |
+| #43    | As a customer, I want to receive confirmation that my contact request has been received and is being processed.                 | Customer               | Low          |
+| #44    | As an admin, I want to manage contact requests efficiently, ensuring quick responses to maintain customer satisfaction.         | Admin                  | Medium       |
+
+### Accessibility and Responsiveness
+
+| **ID** | **User Story**                                                                                                                | **User Role**          | **Priority** |
+|--------|--------------------------------------------------------------------------------------------------------------------------------|------------------------|--------------|
+| #16    | As a user, I want the website to be responsive, so I can shop comfortably on any device.                                        | User                   | High         |
+| #17    | As a user with disabilities, I want the website to be accessible, so I can navigate and use it easily.                          | User                   | High         |
+
+### Development and Deployment
+
+| **ID** | **User Story**                                                                                                                | **User Role**          | **Priority** |
+|--------|--------------------------------------------------------------------------------------------------------------------------------|------------------------|--------------|
+| #19    | As a developer, I want to implement error handling and fallbacks, so users can understand and resolve issues quickly.           | Developer              | High         |
+| #20    | As a developer, I want to set debug to false in the production environment, so the site runs efficiently and securely.          | Developer              | High         |
+| #21    | As a developer, I want to thoroughly test all functionality, so I can ensure the site works as intended before deployment.      | Developer              | High         |
+| #22    | As a developer, I want to set up Allauth, so users can easily manage authentication and account-related tasks.                  | Developer              | Medium       |
+| #24    | As a developer, I want to integrate Cloudinary, so I can manage media assets effectively.                                       | Developer              | Medium       |
+| #25    | As a developer, I want to integrate ElephantSQL, so I can use a reliable database service for the project.                      | Developer              | Medium       |
+| #26    | As a developer, I want to deploy the application on Heroku, so it is accessible to users online.                                | Developer              | High         |
+| #27    | As a developer, I want to create unit tests, so I can ensure each part of the application functions correctly.                  | Developer              | High         |
+| #28    | As a developer, I want to conduct manual testing, so I can identify any issues that automated tests might miss.                 | Developer              | Medium       |
+| #29    | As a developer, I want to create comprehensive documentation, so users and other developers can understand and use the platform effectively. | Developer              | Medium       |
+| #30    | As a developer, I want to create a detailed README file, so users can get an overview of the project, its features, and how to use it. | Developer              | Low          |
+| #31    | As a developer, I want to create a new Django project named "GN SHOP or ShopMingle," so I can start building the e-commerce platform. | Developer              | High         |
+| #32    | As a developer, I want to create a new Django app within the project for core functionalities, so I can modularize the application. | Developer              | High         |
+| #33    | As a developer, I want to configure the database settings in Django, so I can store and retrieve data efficiently.              | Developer              | Medium       |
+| #34    | As a developer, I want to define initial models for User, Product, so I can establish the foundational database schema.          | Developer              | High         |
+| #35    | As a developer, I want to define and manage routes for different pages, including static and dynamic content, so I can maintain a structured website. | Admin                  | High         |
+| #36    | As a developer, I want to generate a sitemap.xml file that lists all the URLs in the site, so I can improve SEO.                 | Developer              | Medium       |
+| #37    | As a developer, I want all routes to have proper SEO attributes, so I can enhance the website's visibility in search engines.    | Developer              | Low          |
+| #38    | As a developer, I want to validate code (CSS, HTML, JavaScript) to ensure it meets standards and runs efficiently.               | Developer              | Medium       |
+| #39    | As a developer, I want to deploy the new features to Heroku and update documentation accordingly.                               | Developer              | High         |
 
 - [Click to see the full version of User Stories On github](https://github.com/users/wlia-code/projects/5)
 
