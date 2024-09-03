@@ -21,7 +21,7 @@
 - [Newsletter Signup](#newsletter-signup)
 - [SEO Strategy](#seo-strategy)
 - [Visual Overview](#visual-overview)
-- [Entity Relationship Diagram (ERD)](#Entity-Relationship-Diagram-(ERD))
+- [Entity Relationship Diagram (ERD)](#entity-relationship-diagram-erd)
   - [Database Choice](#database-choice)
   - [Data Models](#data-models)
 - [Technologies Used](#technologies-used)
@@ -248,7 +248,8 @@ We configured the `robots.txt` file to manage which pages are accessible to sear
 
 
 
-#### Entity Relationship Diagram (ERD)
+## Entity Relationship Diagram (ERD)
+
 - **Development**: SQLite3 (default database provided by Django)
 - **Production**: PostgreSQL (provided by Heroku)
 
