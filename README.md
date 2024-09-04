@@ -26,7 +26,6 @@
   - [Database Choice](#database-choice)
   - [Data Models](#data-models)
 - [Technologies Used](#technologies-used)
-- [Testing](#testing)
 - [Testing](testing.md)
 - [Installation & Usage](#installation--usage)
 - [Deployment](#deployment)
