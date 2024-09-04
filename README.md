@@ -12,6 +12,7 @@
 - [UX](#ux)
   - [Goals](#goals)
   - [Target Audience](#target-audience)
+  - [Wireframes](#wireframes)
   - [User Stories](#user-stories)
 - [Features](#features)
   - [Existing Features](#existing-features)
@@ -45,6 +46,56 @@ The primary goal of the GN-SHOP project is to demonstrate a robust and fully-fun
 
 - B2C (Business to Consumer) model,  the target audience is individual consumers who are looking for a convenient and varied     
   shopping experience from the comfort of their own homes or on the go. The platform is specifically designed to cater to the needs and preferences of end-users rather than businesses or wholesale buyers, focusing on direct sales through an accessible online store interface. This approach makes the platform suitable for a wide range of consumers, from casual shoppers to those seeking specific items for personal use.
+
+## Wireframes
+
+The wireframes for the GN-SHOP project were created to visualize the layout and structure of key pages before development. These wireframes helped guide the design process, ensuring a user-friendly interface and cohesive layout across different devices.
+
+### Wireframe Overview
+
+Wireframes were designed for the following key pages:
+
+- **Landing Page**
+- **Products Page**
+- **Product Detail Page**
+- **Shipping Information Page**
+- **Profile Page**
+
+### Wireframe Screenshots
+
+Below are the screenshots of the wireframes for each page:
+
+1. **Landing Page Wireframe**
+   - ![Landing Page Wireframe](media/readme_media/landingpage.png)
+2. **Products Page Wireframe**
+   - ![Products Page Wireframe](media/readme_media/Productspage.png)
+3. **Product Detail Page Wireframe**
+   - ![Product Detail Page Wireframe](media/readme_media/product.png)
+4. **Shipping Information Page Wireframe**
+   - ![Shipping Information Page Wireframe](media/readme_media/shippinginfo.png)
+5. **Profile Page Wireframe**
+   - ![Profile Page Wireframe](media/readme_media/Myprofile.png)
+6.  **checkout Page Wireframe**
+   - ![checkout Wireframe](media/readme_media/checkout1.png)
+
+### Responsive Design Wireframes
+
+Wireframes were also designed to ensure the site’s responsiveness across various devices:
+
+1. **Tablet View Wireframe (iPad)**
+   - ![Tablet View Wireframe](media/readme_media/ipad.png)
+2. **Mobile View Wireframe (Phone)**
+   - ![Mobile View Wireframe](media/readme_media/iphone.png)
+
+### Wireframe Analysis
+
+These wireframes served as essential blueprints for the development process, ensuring:
+
+- **Consistency**: A uniform design and layout across different pages.
+- **User Experience (UX)**: A focus on intuitive navigation and accessibility.
+- **Responsiveness**: Compatibility with different devices, including tablets and mobile phones.
+
+By adhering to these wireframes, the development team was able to maintain a clear direction throughout the project, ultimately delivering a product that aligns with the initial design vision and meets the needs of the users.
 
 
 ## User Stories
