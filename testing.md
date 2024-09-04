@@ -10,6 +10,7 @@
 4. [Bugs Found and Fixed](#bugs-found-and-fixed)
 5. [Notes on Code Quality](#notes-on-code-quality)
 6. [Conclusion](#conclusion)
+7. [Back to main README](readme.md)
 
 ---
 
