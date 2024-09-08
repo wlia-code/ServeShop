@@ -65,26 +65,26 @@ Wireframes were designed for the following key pages:
 Below are the screenshots of the wireframes for each page:
 
 1. **Landing Page Wireframe**
-   - ![Landing Page Wireframe](media/readme_media/landingpage.png)
+   - ![Landing Page Wireframe](media/readme_media/landingpage11.png)
 2. **Products Page Wireframe**
-   - ![Products Page Wireframe](media/readme_media/Productspage.png)
+   - ![Products Page Wireframe](media/readme_media/Productspage11.png)
 3. **Product Detail Page Wireframe**
-   - ![Product Detail Page Wireframe](media/readme_media/product.png)
+   - ![Product Detail Page Wireframe](media/readme_media/product11.png)
 4. **Shipping Information Page Wireframe**
-   - ![Shipping Information Page Wireframe](media/readme_media/shippinginfo.png)
+   - ![Shipping Information Page Wireframe](media/readme_media/shippinginfo11.png)
 5. **Profile Page Wireframe**
-   - ![Profile Page Wireframe](media/readme_media/Myprofile.png)
+   - ![Profile Page Wireframe](media/readme_media/Myprofile11.png)
 6.  **checkout Page Wireframe**
-   - ![checkout Wireframe](media/readme_media/checkout1.png)
+   - ![checkout Wireframe](media/readme_media/checkout11.png)
 
 ### Responsive Design Wireframes
 
 Wireframes were also designed to ensure the site’s responsiveness across various devices:
 
 1. **Tablet View Wireframe (iPad)**
-   - ![Tablet View Wireframe](media/readme_media/ipad.png)
+   - ![Tablet View Wireframe](media/readme_media/ipad11.png)
 2. **Mobile View Wireframe (Phone)**
-   - ![Mobile View Wireframe](media/readme_media/iphone.png)
+   - ![Mobile View Wireframe](media/readme_media/iphone11.png)
 
 ### Wireframe Analysis
 
